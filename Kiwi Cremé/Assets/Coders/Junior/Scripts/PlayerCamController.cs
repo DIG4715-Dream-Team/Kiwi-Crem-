@@ -2,16 +2,17 @@ using UnityEngine;
 
 public class PlayerCamController : MonoBehaviour
 {
-    public enum RotationAxes { MouseXAndY = 0}
-    public RotationAxes axes = RotationAxes.MouseXAndY;
-    public float sensitivityX;
-    public float sensitivityY;
-    public float minimumX;
-    public float maximumX;
-    public float minimumY;
-    public float maximumY;
+    public float sensitivityX = 5;
+    public float sensitivityY = 5;
     float rotationY;
     float rotationX;
+
+    [SerializeField]
+    private GameObject player;
+    void Start()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+    }
 
     void FixedUpdate()
     {
@@ -20,15 +21,12 @@ public class PlayerCamController : MonoBehaviour
 
     private void MouseLook()
     {
-        if (axes == RotationAxes.MouseXAndY)
-        {
-            rotationY += Input.GetAxis("Mouse Y") * sensitivityY;
-            rotationY = Mathf.Clamp(rotationY, minimumY, maximumY);
+        rotationY += Input.GetAxis("Mouse Y") * sensitivityY;
+        rotationY = Mathf.Clamp(rotationY, -45, 45);
+        rotationX += Input.GetAxis("Mouse X") * sensitivityX;
+        player.transform.localRotation = Quaternion.Euler(0, rotationX, 0);
+        transform.localRotation = Quaternion.Euler(-rotationY, 0, 0);
 
-            rotationX += Input.GetAxis("Mouse X") * sensitivityX;
-            rotationX = Mathf.Clamp(rotationX, minimumX, maximumX);
-
-            transform.eulerAngles = new Vector3(-rotationY, rotationX, 0);
-        }
+        transform.eulerAngles = new Vector3(-rotationY, rotationX, 0);
     }
 }

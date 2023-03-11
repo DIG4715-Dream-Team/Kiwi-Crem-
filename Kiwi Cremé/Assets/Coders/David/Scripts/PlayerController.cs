@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -13,12 +11,16 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void FixedUpdate()
     {
-        float xMove = Input.GetAxisRaw("Horizontal"); 
+        PlayerMovement();
+    }
+
+    private void PlayerMovement()
+    {
+        float xMove = Input.GetAxisRaw("Horizontal");
         float zMove = Input.GetAxisRaw("Vertical");
-   
-        rb.velocity = new Vector3(xMove, rb.velocity.y, zMove) * speed;
+
+        rb.velocity = (transform.right * xMove + transform.forward * zMove) * speed;
     }
 }
