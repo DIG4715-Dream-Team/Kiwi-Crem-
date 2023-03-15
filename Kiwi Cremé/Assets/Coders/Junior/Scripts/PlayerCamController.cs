@@ -11,7 +11,7 @@ public class PlayerCamController : MonoBehaviour
     private GameObject player;
     void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
+        
     }
 
     void FixedUpdate()
