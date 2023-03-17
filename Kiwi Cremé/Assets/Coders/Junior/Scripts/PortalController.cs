@@ -21,7 +21,7 @@ public class PortalController : MonoBehaviour
         {
             Ray ray = Cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
             RaycastHit hit;
-            if (Physics.Raycast(ray, out hit))
+            if (Physics.Raycast(ray, out hit) && hit.transform.tag == "EntryPad")
             {
                 Vector3 point = hit.point;
                 Debug.DrawRay(point, Vector3.up, Color.red, 5f);
@@ -33,7 +33,7 @@ public class PortalController : MonoBehaviour
         {
             Ray ray = Cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
             RaycastHit hit;
-            if (Physics.Raycast(ray, out hit))
+            if (Physics.Raycast(ray, out hit) && hit.transform.tag == "ExitPad")
             {
                 Vector3 point = hit.point;
                 Debug.DrawRay(point, Vector3.up, Color.red, 5f);

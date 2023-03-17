@@ -6,6 +6,16 @@ public class PlayerController : MonoBehaviour
 
     Rigidbody rb;
 
+    public bool Died { get; private set; }
+    public bool CompletedObjectives { get; private set; }
+    public int Health { get; private set; }
+    public bool GameOver { get; private set; }
+
+    public bool HasPearls { get; private set; }
+    public int EnPearls { get; private set; }
+    public int ExPearls { get; private set; }
+
+    
     void Start()
     {
         rb = GetComponent<Rigidbody>();
