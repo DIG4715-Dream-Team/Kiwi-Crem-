@@ -1,18 +1,100 @@
-using System.Collections;
-using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField]
+    private TextMeshProUGUI Health;
+    [SerializeField]
+    private TextMeshProUGUI Timer;
+    private float timeLeft;
+    [SerializeField]
+    private TextMeshProUGUI EnPearlInfo;
+    [SerializeField]
+    private TextMeshProUGUI ExPearlInfo;
+
+    private GameObject player;
+    private PlayerController Player;
+
+    private GameObject buttonManager;
+    private ButtonManager ButtonManager;
+
     void Start()
     {
-        
+        Cursor.lockState = CursorLockMode.Locked;
+        timeLeft = 90;
+        buttonManager = GameObject.FindGameObjectWithTag("ButtonManager");
+        ButtonManager = buttonManager.GetComponent<ButtonManager>();
+        SceneCheck();
+        if (ButtonManager.currentScene != "Tiny_Shell_MainMenu")
+        {
+            player = GameObject.FindGameObjectWithTag("Player");
+            Player = player.GetComponent<PlayerController>();
+        }
+        Time.timeScale = 1;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if (ButtonManager.currentScene != "Tiny_Shell_MainMenu")
+        {
+            GameFinishedLogic();
+            UpdateHUDElements();
+            UpdatePearAmount();
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        if (ButtonManager.currentScene != "Tiny_Shell_MainMenu")
+        {
+            Timers();
+        }
+    }
+
+    private void SceneCheck()
+    {
+        if (ButtonManager.currentScene == "Tiny_Shell_MainMenu")
+        {
+            ButtonManager.inMainMenu = true;
+        }
+    }
+    private void Timers()
+    {
+        timeLeft = timeLeft -= Time.deltaTime;
+    }
+
+    private void UpdateHUDElements()
+    {
+        Health.text = $"Current Health:{Player.Health}";
+        Timer.text = $"Time Left:{timeLeft.ToString("F1")}";
+    }
+
+    private void UpdatePearAmount()
+    {
+            EnPearlInfo.text = $"Entry Portal Pearls:{Player.EnPearls}";
+            ExPearlInfo.text = $"Entry Portal Pearls:{Player.ExPearls}";
+    }
+
+    public void GameFinishedLogic()
+    {
+        if (Player.Died == true)
+        {
+            Time.timeScale = 0;
+            ButtonManager.EndMenu.SetActive(true);
+            ButtonManager.MiddleText.text = "You have died!";
+        }
+        else if (Player.CompletedObjectives == true)
+        {
+            Time.timeScale = 0;
+            ButtonManager.EndMenu.SetActive(true);
+            ButtonManager.MiddleText.text = "You reached the water!";
+        }
+        else if (timeLeft <= 0)
+        {
+            Time.timeScale = 0;
+            ButtonManager.EndMenu.SetActive(true);
+            ButtonManager.MiddleText.text = "You failed to reach the water in time!";
+        }
     }
 }

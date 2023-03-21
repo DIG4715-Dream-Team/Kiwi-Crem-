@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1280
     height: 629
   m_ShowMode: 4
-  m_Title: Scene
+  m_Title: Game
   m_RootView: {fileID: 6}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -70,6 +70,7 @@ MonoBehaviour:
     height: 579
   m_MinSize: {x: 276, y: 71}
   m_MaxSize: {x: 4001, y: 4021}
+
   m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}
@@ -224,6 +225,7 @@ MonoBehaviour:
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
   controlID: 27
+
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -249,6 +251,7 @@ MonoBehaviour:
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
   controlID: 28
+
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -318,6 +321,7 @@ MonoBehaviour:
     m_SearchArea: 1
     m_Folders:
     - Assets/Coders/David/Assets
+
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
@@ -333,6 +337,7 @@ MonoBehaviour:
     m_SelectedIDs: 20550000
     m_LastClickedID: 21792
     m_ExpandedIDs: 00000000f6540000f8540000fa540000fc5400001255000000ca9a3b
+
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -361,6 +366,7 @@ MonoBehaviour:
     m_SelectedIDs: 
     m_LastClickedID: 0
     m_ExpandedIDs: 00000000f6540000f8540000fa540000fc540000
+
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -451,7 +457,7 @@ MonoBehaviour:
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_LastInspectedObjectInstanceID: -1
-  m_LastVerticalScrollValue: 0
+  m_LastVerticalScrollValue: 255
   m_GlobalObjectId: 
   m_InspectorMode: 0
   m_LockTracker:
@@ -491,6 +497,7 @@ MonoBehaviour:
       m_SelectedIDs: ec550000
       m_LastClickedID: 21996
       m_ExpandedIDs: c8f2ffff14f3ffff36f4ffff16fbffff6a5500006e550000ec550000045600003856000062560000
+
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -613,7 +620,7 @@ MonoBehaviour:
       floating: 0
       collapsed: 0
       displayed: 1
-      snapOffset: {x: 0, y: 0}
+      snapOffset: {x: 0, y: 25}
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 0
       id: unity-transform-toolbar
@@ -764,6 +771,7 @@ MonoBehaviour:
     m_Target: {x: 0.000000059604645, y: 0.5, z: -0.9027926}
     speed: 2
     m_Value: {x: 0.000000059604645, y: 0.5, z: -0.9027926}
+
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -817,13 +825,14 @@ MonoBehaviour:
     m_Target: 1.3287396
     speed: 2
     m_Value: 1.2715212
+
   m_Ortho:
     m_Target: 0
     speed: 2
     m_Value: 0
   m_CameraSettings:
-    m_Speed: 1
-    m_SpeedNormalized: 0.5
+    m_Speed: 1.3603196
+    m_SpeedNormalized: 0.6799998
     m_SpeedMin: 0.001
     m_SpeedMax: 2
     m_EasingEnabled: 1
