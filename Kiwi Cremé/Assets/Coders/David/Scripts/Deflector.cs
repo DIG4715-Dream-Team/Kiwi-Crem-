@@ -4,8 +4,13 @@ using UnityEngine;
 
 public class Deflector : MonoBehaviour
 {
+    [SerializeField]
+    private Camera Cam;
+    [SerializeField]
+    private GameObject Player;
+    
     public GameObject Sheild;
-
+    
     float lastTime;
 
 
@@ -18,18 +23,15 @@ public class Deflector : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.E) && (Time.time - lastTime > 5.0f))
         {
-            Instantiate(Sheild);
+            Ray ray = Cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0.5f));
+            RaycastHit hit;
+            if (Physics.Raycast(ray, out hit))
+            {
+                Vector3 point = hit.point;
+                Debug.DrawRay(point, Vector3.up, Color.red, 5f);
+                Instantiate(Sheild, point, Player.transform.rotation * Quaternion.Euler(90f, 0f, 0f));
+            }
             lastTime = Time.time;
-        }
-
-    }
-
-    public IEnumerator Wait(float delayInSecs)
-    {
-        if(Input.GetKeyDown(KeyCode.E))
-        {
-            yield return new WaitForSeconds(2);
-            Destroy(Sheild);
         }
     }
 }
