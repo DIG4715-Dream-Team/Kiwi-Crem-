@@ -4,16 +4,21 @@ using UnityEngine;
 
 public class Deflected : MonoBehaviour
 {
+    public LayerMask collisionMask;
+    private float speed = 15;
 
     void Update()
     {
+        transform.Translate(Vector3.forward * Time.deltaTime * speed);
+        
         Ray ray = new Ray(transform.position, transform.forward);
-    }
+        RaycastHit hit;
 
-    void OnCollisionEnter(Collision collision)
+        if(Physics.Raycast(ray, out hit, Time.deltaTime * speed + .1f,collisionMask))
         {
-            Vector3 v = Vector3.Reflect(transform.up, collision.contacts[0].normal);
-            float rot = 90 - Mathf.Atan2(v.z, v.x) * Mathf.Rad2Deg;
-            transform.eulerAngles = new Vector3(90, rot, 0);
+            Vector3 reflectDir = Vector3.Reflect(ray.direction, hit.normal);
+            float rot = 90 - Mathf.Atan2(reflectDir.z, reflectDir.x) * Mathf.Rad2Deg;
+            transform.eulerAngles = new Vector3(0, rot, 0);
         }
+    }
 }

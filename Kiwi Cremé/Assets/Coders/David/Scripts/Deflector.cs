@@ -13,7 +13,6 @@ public class Deflector : MonoBehaviour
     
     float lastTime;
 
-
     void Start()
     {
         lastTime = -5.0f;
@@ -23,13 +22,13 @@ public class Deflector : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.E) && (Time.time - lastTime > 5.0f))
         {
-            Ray ray = Cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0.5f));
+            Ray ray = Cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f));
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit))
             {
                 Vector3 point = hit.point;
                 Debug.DrawRay(point, Vector3.up, Color.red, 5f);
-                Instantiate(Sheild, point, Player.transform.rotation * Quaternion.Euler(90f, 0f, 0f));
+                Instantiate(Sheild, point, Player.transform.rotation * Quaternion.Euler(0f, 0f, 0f));
             }
             lastTime = Time.time;
         }
