@@ -12,13 +12,21 @@ public class Deflector : MonoBehaviour
     public GameObject Sheild;
     
     float lastTime;
+
+    private float Destroy;
     
     void Start()
     {
+        Destroy = 2f;
         lastTime = -5.0f;
     }
 
     void Update()
+    {
+        Deflector();
+    }
+
+    private void Deflector()
     {
         if(Input.GetKeyDown(KeyCode.E) && (Time.time - lastTime > 5.0f))
         {
@@ -30,9 +38,15 @@ public class Deflector : MonoBehaviour
                 Debug.DrawRay(point, Vector3.up, Color.red, 5f);
                 Instantiate(Sheild, point, Player.transform.rotation * Quaternion.Euler(0f, 0f, 0f));
 
-                GameObject clone = Instantiate(Sheild, point, Player.transform.rotation * Quaternion.Euler(0f, 0f, 0f));
+                Destroy = Destroy - Time.deltaTime;
+                if (Destroy = 0)
+                {
+                    GameObject.Destroy;
+                }
 
-                Destroy (clone, 1.0f);
+                // GameObject clone = Instantiate(Sheild, point, Player.transform.rotation * Quaternion.Euler(0f, 0f, 0f));
+
+                // Destroy (clone, 1.0f);
             }
             lastTime = Time.time;
         }
