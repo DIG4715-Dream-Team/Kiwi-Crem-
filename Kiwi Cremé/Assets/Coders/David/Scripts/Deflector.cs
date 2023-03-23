@@ -12,7 +12,7 @@ public class Deflector : MonoBehaviour
     public GameObject Sheild;
     
     float lastTime;
-
+    
     void Start()
     {
         lastTime = -5.0f;
@@ -29,6 +29,10 @@ public class Deflector : MonoBehaviour
                 Vector3 point = hit.point;
                 Debug.DrawRay(point, Vector3.up, Color.red, 5f);
                 Instantiate(Sheild, point, Player.transform.rotation * Quaternion.Euler(0f, 0f, 0f));
+
+                GameObject clone = Instantiate(Sheild, point, Player.transform.rotation * Quaternion.Euler(0f, 0f, 0f));
+
+                Destroy (clone, 1.0f);
             }
             lastTime = Time.time;
         }

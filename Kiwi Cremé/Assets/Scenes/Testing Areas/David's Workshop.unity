@@ -135,8 +135,6 @@ GameObject:
   - component: {fileID: 90276519}
   - component: {fileID: 90276520}
   - component: {fileID: 90276521}
-  - component: {fileID: 90276522}
-  - component: {fileID: 90276524}
   m_Layer: 0
   m_Name: Third Person Player
   m_TagString: Untagged
@@ -209,33 +207,6 @@ MonoBehaviour:
   PlayerHeight: {fileID: 90276519}
   normalHeight: 1
   crouchHeight: 0.5
---- !u!114 &90276522
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 90276516}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 280148d07e871e54baf91037fca46221, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Cam: {fileID: 1850363435}
-  Player: {fileID: 90276516}
-  Sheild: {fileID: 1145269130507993006, guid: abb4138b055eee74185cd03e2f50978c, type: 3}
---- !u!114 &90276524
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 90276516}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2b40ab642be5804384eefc657c2f5ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &137135371
 GameObject:
   m_ObjectHideFlags: 3
@@ -310,7 +281,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 4
-  m_FollowOffset: {x: 0, y: 3, z: -8}
+  m_FollowOffset: {x: 0, y: 3, z: -2}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -374,7 +345,6 @@ GameObject:
   - component: {fileID: 147795451}
   - component: {fileID: 147795454}
   - component: {fileID: 147795453}
-  - component: {fileID: 147795452}
   m_Layer: 0
   m_Name: Turret Fire
   m_TagString: Untagged
@@ -398,20 +368,6 @@ Transform:
   m_Father: {fileID: 1726459994}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!136 &147795452
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 147795450}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!23 &147795453
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -531,7 +487,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 338716183}
-  m_LocalRotation: {x: 0.1784248, y: 0.000000008465141, z: -0.0000000015350229, w: 0.98395354}
+  m_LocalRotation: {x: 0.47185794, y: 1e-45, z: -1e-45, w: 0.88167465}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -656,7 +612,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 559393515}
-  m_LocalRotation: {x: 0.14256498, y: -0.000000008515311, z: 0.0000000012265134, w: 0.9897855}
+  m_LocalRotation: {x: 0.43951973, y: -0.000000015455335, z: 0.000000007562542, w: 0.89823294}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -739,7 +695,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 4
-  m_FollowOffset: {x: 0, y: 3, z: -8}
+  m_FollowOffset: {x: 0, y: 3, z: -2}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -903,11 +859,11 @@ MonoBehaviour:
   m_SplineCurvature: 0.2
   m_Orbits:
   - m_Height: 5
-    m_Radius: 10
+    m_Radius: 4
   - m_Height: 3
-    m_Radius: 8
+    m_Radius: 2
   - m_Height: 1
-    m_Radius: 6
+    m_Radius: 4
   m_LegacyHeadingBias: 3.4028235e+38
   m_Rigs:
   - {fileID: 338716184}
@@ -921,7 +877,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 817400459}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.5, z: -8.95}
+  m_LocalPosition: {x: 0, y: 3.5, z: -2.95}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1266,7 +1222,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 4
-  m_FollowOffset: {x: 0, y: 3, z: -8}
+  m_FollowOffset: {x: 0, y: 3, z: -2}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -1500,7 +1456,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1546802059}
-  m_LocalRotation: {x: 0.16049767, y: -0, z: -0, w: 0.9870362}
+  m_LocalRotation: {x: 0.45574263, y: -0.000000010433749, z: 0.0000000053421427, w: 0.8901116}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1520,7 +1476,6 @@ GameObject:
   - component: {fileID: 1726459994}
   - component: {fileID: 1726459993}
   - component: {fileID: 1726459992}
-  - component: {fileID: 1726459991}
   m_Layer: 0
   m_Name: Turret
   m_TagString: Untagged
@@ -1528,19 +1483,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!65 &1726459991
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1726459990}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1726459992
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1619,6 +1561,7 @@ GameObject:
   - component: {fileID: 1850363435}
   - component: {fileID: 1850363434}
   - component: {fileID: 1850363437}
+  - component: {fileID: 1850363438}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1684,8 +1627,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1850363433}
-  m_LocalRotation: {x: 0.1604977, y: 0, z: 0, w: 0.9870362}
-  m_LocalPosition: {x: 0, y: 3.5, z: -8.95}
+  m_LocalRotation: {x: 0.45574266, y: -0.000000038939287, z: 0.000000019937158, w: 0.89011157}
+  m_LocalPosition: {x: 0, y: 3.5, z: -2.95}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1726,3 +1669,18 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1850363438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1850363433}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 280148d07e871e54baf91037fca46221, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Cam: {fileID: 1850363435}
+  Player: {fileID: 90276516}
+  Sheild: {fileID: 1145269130507993006, guid: abb4138b055eee74185cd03e2f50978c, type: 3}
