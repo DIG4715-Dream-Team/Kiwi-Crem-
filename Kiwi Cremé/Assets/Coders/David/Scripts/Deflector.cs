@@ -17,16 +17,16 @@ public class Deflector : MonoBehaviour
     
     void Start()
     {
-        Destroy = 2f;
+        Destroy = 2;
         lastTime = -5.0f;
     }
 
     void Update()
     {
-        Deflector();
+        Shield();
     }
 
-    private void Deflector()
+    private void Shield()
     {
         if(Input.GetKeyDown(KeyCode.E) && (Time.time - lastTime > 5.0f))
         {
@@ -39,9 +39,9 @@ public class Deflector : MonoBehaviour
                 Instantiate(Sheild, point, Player.transform.rotation * Quaternion.Euler(0f, 0f, 0f));
 
                 Destroy = Destroy - Time.deltaTime;
-                if (Destroy = 0)
+                if (Destroy <= 0)
                 {
-                    GameObject.Destroy;
+                    Destroy(this.gameObject);
                 }
 
                 // GameObject clone = Instantiate(Sheild, point, Player.transform.rotation * Quaternion.Euler(0f, 0f, 0f));
