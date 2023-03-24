@@ -37,7 +37,6 @@ public class Deflector : MonoBehaviour
                 Vector3 point = hit.point;
                 Debug.DrawRay(point, Vector3.up, Color.red, 5f);
                 Instantiate(Sheild, point, Player.transform.rotation * Quaternion.Euler(0f, 0f, 0f));
-
                 Destroy = Destroy - Time.deltaTime;
                 if (Destroy <= 0)
                 {
