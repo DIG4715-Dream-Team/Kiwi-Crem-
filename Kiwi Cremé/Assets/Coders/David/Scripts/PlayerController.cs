@@ -24,6 +24,7 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         PlayerMovement();
+        Crouching();
     }
 
     private void PlayerMovement()
@@ -32,5 +33,18 @@ public class PlayerController : MonoBehaviour
         float zMove = Input.GetAxisRaw("Vertical");
 
         rb.velocity = (transform.right * xMove + transform.forward * zMove) * speed;
+    }
+
+    private void Crouching()
+    {
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            speed = 3f;
+        }
+
+        if (Input.GetKeyUp(KeyCode.LeftShift))
+        {
+            speed = 5f;
+        }
     }
 }
