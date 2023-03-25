@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         PlayerMovement();
         Crouching();
@@ -40,11 +40,13 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             speed = 3f;
+            Debug.Log("ShiftKey is Down");
         }
 
         if (Input.GetKeyUp(KeyCode.LeftShift))
         {
             speed = 5f;
+            Debug.Log("ShiftKey is Up");
         }
     }
 }
