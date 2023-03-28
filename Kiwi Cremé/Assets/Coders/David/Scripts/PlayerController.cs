@@ -15,8 +15,6 @@ public class PlayerController : MonoBehaviour
     public int EnPearls { get; private set; }
     public int ExPearls { get; private set; }
 
-    public bool hasTeleported = false;
-    
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -49,15 +47,5 @@ public class PlayerController : MonoBehaviour
             speed = 5f;
             Debug.Log("ShiftKey is Up");
         }
-    }
-
-    public bool HasTeleported()
-    {
-        return hasTeleported;
-    }
-
-    public void ResetTeleported()
-    {
-        hasTeleported = false;
     }
 }

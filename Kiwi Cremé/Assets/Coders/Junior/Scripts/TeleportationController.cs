@@ -22,9 +22,7 @@ public class TeleportationController : MonoBehaviour
                     Vector3 velocity = other.GetComponent<Rigidbody>().velocity;
                     player.transform.position = tloc;
                     player.GetComponent<Rigidbody>().velocity = velocity;
-                    Quaternion portalRotation = Exit.transform.localRotation;
-                    player.transform.localRotation = Quaternion.LookRotation(portalRotation * Vector3.forward, portalRotation * Vector3.up);
-                    player.GetComponent<PlayerController>().hasTeleported = true;
+                    player.transform.localRotation = Quaternion.Euler(Exit.transform.localRotation.x, Exit.transform.localRotation.y, Exit.transform.localRotation.z);
                 }
             }
         }
