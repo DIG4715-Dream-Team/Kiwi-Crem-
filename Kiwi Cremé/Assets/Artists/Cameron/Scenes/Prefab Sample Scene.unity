@@ -966,6 +966,7 @@ GameObject:
   m_Component:
   - component: {fileID: 632382882}
   - component: {fileID: 632382881}
+  - component: {fileID: 632382883}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -1050,6 +1051,26 @@ Transform:
   m_Father: {fileID: 462689583}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!114 &632382883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 632382880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 1
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
 --- !u!1 &654544811
 GameObject:
   m_ObjectHideFlags: 0
@@ -1146,6 +1167,7 @@ GameObject:
   m_Component:
   - component: {fileID: 694999774}
   - component: {fileID: 694999775}
+  - component: {fileID: 694999776}
   m_Layer: 0
   m_Name: Directional Light (1)
   m_TagString: Untagged
@@ -1230,6 +1252,26 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &694999776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 694999773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 1
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
 --- !u!1 &756618318
 GameObject:
   m_ObjectHideFlags: 0
@@ -2393,6 +2435,10 @@ PrefabInstance:
     - target: {fileID: 2392425537081718996, guid: 99b11a63566ba534486b529c737eb8f9, type: 3}
       propertyPath: m_Name
       value: Bush
+      objectReference: {fileID: 0}
+    - target: {fileID: 2392425537081718996, guid: 99b11a63566ba534486b529c737eb8f9, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3060278363662082670, guid: 99b11a63566ba534486b529c737eb8f9, type: 3}
       propertyPath: m_RootOrder
@@ -3952,6 +3998,10 @@ PrefabInstance:
     - target: {fileID: 3401517868334666862, guid: f57dd219ddf3bf342a91285f054896e9, type: 3}
       propertyPath: m_Name
       value: Bush_Tall
+      objectReference: {fileID: 0}
+    - target: {fileID: 3401517868334666862, guid: f57dd219ddf3bf342a91285f054896e9, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f57dd219ddf3bf342a91285f054896e9, type: 3}
