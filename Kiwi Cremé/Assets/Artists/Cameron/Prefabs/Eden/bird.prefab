@@ -352,7 +352,7 @@ GameObject:
   - component: {fileID: 7558867340532090993}
   - component: {fileID: 9182852635638759568}
   m_Layer: 0
-  m_Name: Bot
+  m_Name: Bird
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

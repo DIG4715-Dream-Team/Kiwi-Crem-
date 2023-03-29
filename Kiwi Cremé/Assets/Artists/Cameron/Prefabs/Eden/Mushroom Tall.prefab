@@ -87,6 +87,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mushroom_Tall
       objectReference: {fileID: 0}
+    - target: {fileID: 1345461150745420499, guid: a5c722ab1af62214a81b15a41b67f959, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1fccae9b328be9245835224d86e0097e, type: 2}
     - target: {fileID: 4726612649484175103, guid: a5c722ab1af62214a81b15a41b67f959, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
