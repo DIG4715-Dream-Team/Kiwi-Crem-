@@ -15,7 +15,6 @@ public class PlayerController : MonoBehaviour
     public int EnPearls { get; private set; }
     public int ExPearls { get; private set; }
 
-    
     void Start()
     {
         rb = GetComponent<Rigidbody>();
