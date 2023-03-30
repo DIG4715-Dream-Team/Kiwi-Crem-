@@ -1,4 +1,6 @@
+using System.Collections;
 using UnityEngine;
+
 
 public class PlayerCamController : MonoBehaviour
 {
@@ -9,10 +11,6 @@ public class PlayerCamController : MonoBehaviour
 
     [SerializeField]
     private GameObject player;
-    void Start()
-    {
-        
-    }
 
     void FixedUpdate()
     {
@@ -26,7 +24,5 @@ public class PlayerCamController : MonoBehaviour
         rotationX += Input.GetAxis("Mouse X") * sensitivityX;
         player.transform.localRotation = Quaternion.Euler(0, rotationX, 0);
         transform.localRotation = Quaternion.Euler(-rotationY, 0, 0);
-
-        transform.eulerAngles = new Vector3(-rotationY, rotationX, 0);
     }
 }
