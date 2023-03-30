@@ -979,6 +979,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rock2
       objectReference: {fileID: 0}
+    - target: {fileID: 3934707525116272814, guid: 6760e36222428fa478af423046a274ba, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8c1d6478531503e4d810589ad060e05c, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6760e36222428fa478af423046a274ba, type: 3}
 --- !u!1 &916356550
@@ -1138,6 +1142,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: c6f813f8e1e539a4d9f8e4155e4c82d9, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 566cbe42c46f625499cf333d2912f3a3, type: 2}
     - target: {fileID: 919132149155446097, guid: c6f813f8e1e539a4d9f8e4155e4c82d9, type: 3}
       propertyPath: m_Name
       value: LillyPad
@@ -1248,6 +1256,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5165532761278844685, guid: e4d2f35dbe2e2c3409bfa9a9c9dfac00, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5165532761278844685, guid: e4d2f35dbe2e2c3409bfa9a9c9dfac00, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: QuitGame
+      objectReference: {fileID: 0}
     - target: {fileID: 5165532762548458718, guid: e4d2f35dbe2e2c3409bfa9a9c9dfac00, type: 3}
       propertyPath: m_Name
       value: -HUD
@@ -1295,6 +1311,14 @@ PrefabInstance:
     - target: {fileID: 5165532762548458719, guid: e4d2f35dbe2e2c3409bfa9a9c9dfac00, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5165532762639310855, guid: e4d2f35dbe2e2c3409bfa9a9c9dfac00, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5165532762639310855, guid: e4d2f35dbe2e2c3409bfa9a9c9dfac00, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: QuitGame
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e4d2f35dbe2e2c3409bfa9a9c9dfac00, type: 3}
@@ -1361,6 +1385,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: ade84b32aec9fa4469aaa5dff3b8a3f0, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 607fc39a724688b478236dc544f1360e, type: 2}
     - target: {fileID: 919132149155446097, guid: ade84b32aec9fa4469aaa5dff3b8a3f0, type: 3}
       propertyPath: m_Name
       value: Bush
@@ -1430,6 +1458,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 222d972584910e9498f6af6ad22b51f7, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ee91932536d61314e86937b0a0cbbeda, type: 2}
     - target: {fileID: 919132149155446097, guid: 222d972584910e9498f6af6ad22b51f7, type: 3}
       propertyPath: m_Name
       value: 2k Polygon Flower
@@ -1503,6 +1535,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mushroom_Stout
       objectReference: {fileID: 0}
+    - target: {fileID: 4726612649484175103, guid: d3d1c97e768136a469f67f7c4e1b0164, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5c6ad71923ca66d458f0c6eeb9c3fc47, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d3d1c97e768136a469f67f7c4e1b0164, type: 3}
 --- !u!1 &1185470249
