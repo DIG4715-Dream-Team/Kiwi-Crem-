@@ -2,18 +2,7 @@ using UnityEngine;
 
 public class TeleportationController : MonoBehaviour
 {
-    private GameObject Exit;
-    private Vector3 tloc;
-
-    void Start()
-    {
-
-    }
-
-    void Update()
-    {
-
-    }
+    private GameObject player;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -27,15 +16,18 @@ public class TeleportationController : MonoBehaviour
                 }
                 else
                 {
-                    Exit = GameObject.FindGameObjectWithTag("Exit");
-                    tloc = Exit.transform.position;
-                    other.transform.position = tloc;
+                    player = other.gameObject;
+                    GameObject Exit = GameObject.FindGameObjectWithTag("Exit");
+                    Vector3 tloc = Exit.transform.position;
+                    Vector3 velocity = other.GetComponent<Rigidbody>().velocity;
+                    player.transform.position = tloc;
+                    player.GetComponent<Rigidbody>().velocity = velocity;
+                    player.transform.localRotation = Quaternion.Euler(Exit.transform.localRotation.x, Exit.transform.localRotation.y, Exit.transform.localRotation.z);
                 }
             }
         }
         else if (other != null && gameObject.CompareTag("Exit"))
         {
-
         }
     }
 }
