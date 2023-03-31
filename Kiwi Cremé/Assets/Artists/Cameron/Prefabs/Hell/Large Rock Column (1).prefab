@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7269449588233301434}
   - component: {fileID: 6002628116140155423}
   - component: {fileID: 8406365894730487509}
+  - component: {fileID: 9201135382158024203}
   m_Layer: 0
   m_Name: Large Rock Column (1)
   m_TagString: Untagged
@@ -83,3 +84,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &9201135382158024203
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8046126372486199040}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.124347, y: 1.2132692, z: 1.3349597}
+  m_Center: {x: 0, y: 0.04446129, z: 0.60252064}
