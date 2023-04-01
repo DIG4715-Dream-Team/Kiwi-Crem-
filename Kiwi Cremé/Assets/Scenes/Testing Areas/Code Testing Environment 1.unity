@@ -833,6 +833,22 @@ PrefabInstance:
       propertyPath: m_FOVAxisMode
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 602717031911150030, guid: 720eae80f6c406e41a35d187ebbdeef9, type: 3}
+      propertyPath: m_TagString
+      value: MainCamera
+      objectReference: {fileID: 0}
+    - target: {fileID: 602717031911150039, guid: 720eae80f6c406e41a35d187ebbdeef9, type: 3}
+      propertyPath: height
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 602717031911150039, guid: 720eae80f6c406e41a35d187ebbdeef9, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1531729307}
+    - target: {fileID: 602717031911150039, guid: 720eae80f6c406e41a35d187ebbdeef9, type: 3}
+      propertyPath: distance
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 720eae80f6c406e41a35d187ebbdeef9, type: 3}
 --- !u!1001 &5165532762741638358
