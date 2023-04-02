@@ -21,4 +21,14 @@ public class Deflected : MonoBehaviour
             transform.eulerAngles = new Vector3(0, rot, 0);
         }
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Turret"))
+        {
+            // Deactivate all scripts and components on the target object
+            collision.gameObject.SetActive(false);
+            Destroy(gameObject);
+        }
+    }
 }

@@ -333,6 +333,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy Eye_High
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 16bf8ee50d75a9d40a451b3ae049bf38, type: 3}
+      propertyPath: m_TagString
+      value: Turret
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 16bf8ee50d75a9d40a451b3ae049bf38, type: 3}
 --- !u!1 &620417138 stripped
@@ -399,7 +403,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 830005245}
   m_LocalRotation: {x: -0, y: 0.7071068, z: 0.7071068, w: 0}
-  m_LocalPosition: {x: -0.48009598, y: 1.190994, z: 0.42814243}
+  m_LocalPosition: {x: -0.022, y: 1.29, z: 0.42814243}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
