@@ -3,7 +3,16 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Entry
+  - Exit
+  - ExitPad
+  - EntryPad
+  - ButtonManager
+  - Projectile
+  - Turret
+  - HiddenPlayer
+  - Obstacles
   layers:
   - Default
   - TransparentFX

@@ -19,7 +19,9 @@ public class LaunchProjectile : MonoBehaviour
             time = time - interpolationPeriod;
 
             GameObject ball = Instantiate(Projectile, transform.position, transform.rotation);
-            ball.GetComponent<Rigidbody>().AddRelativeForce(new Vector3(0, launchVelocity,0));        
+            ball.GetComponent<Rigidbody>().AddRelativeForce(new Vector3(0, launchVelocity,0));
+
+            Destroy(ball, 4f);
         }
     }
 }
