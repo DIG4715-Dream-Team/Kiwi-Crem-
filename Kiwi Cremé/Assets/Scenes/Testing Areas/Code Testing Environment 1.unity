@@ -849,6 +849,18 @@ PrefabInstance:
       propertyPath: distance
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 602717031911150039, guid: 720eae80f6c406e41a35d187ebbdeef9, type: 3}
+      propertyPath: sensitivityX
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 602717031911150039, guid: 720eae80f6c406e41a35d187ebbdeef9, type: 3}
+      propertyPath: sensitivityY
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 602717031911150039, guid: 720eae80f6c406e41a35d187ebbdeef9, type: 3}
+      propertyPath: rotationMultiplier
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 720eae80f6c406e41a35d187ebbdeef9, type: 3}
 --- !u!1001 &5165532762741638358

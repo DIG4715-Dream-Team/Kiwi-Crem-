@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class PlayerCamController : MonoBehaviour
 {
-    public float sensitivityX = 5;
-    public float sensitivityY = 5;
+    public float sensitivityX = 2;
+    public float sensitivityY = 2;
     float rotationY;
     float rotationX;
 
@@ -19,10 +19,21 @@ public class PlayerCamController : MonoBehaviour
 
     private void MouseLook()
     {
-        rotationY += Input.GetAxis("Mouse Y") * sensitivityY;
+        // Get the mouse input
+        float mouseX = Input.GetAxis("Mouse X") * sensitivityX;
+        float mouseY = Input.GetAxis("Mouse Y") * sensitivityY;
+
+        // Calculate the new camera rotation
+        rotationY += mouseY;
+        rotationX += mouseX;
+
+        // Clamp the rotation values
         rotationY = Mathf.Clamp(rotationY, -45, 45);
-        rotationX += Input.GetAxis("Mouse X") * sensitivityX;
-        player.transform.localRotation = Quaternion.Euler(0, rotationX, 0);
+
+        // Apply the new rotation to the camera
         transform.localRotation = Quaternion.Euler(-rotationY, 0, 0);
+
+        // Rotate the player object around the y-axis
+        player.transform.Rotate(Vector3.up, mouseX);
     }
 }
