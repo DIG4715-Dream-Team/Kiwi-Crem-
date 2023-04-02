@@ -38,14 +38,26 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
+            transform.gameObject.tag = "HiddenPlayer";
             speed = 3f;
             Debug.Log("ShiftKey is Down");
         }
 
         if (Input.GetKeyUp(KeyCode.LeftShift))
         {
+            transform.gameObject.tag = "Player";
             speed = 5f;
             Debug.Log("ShiftKey is Up");
+        }
+    }
+
+    public void HealthManagement(int amount)
+    {
+        Health = Health + amount;
+
+        if (Health <= 0)
+        {
+            Died = true;
         }
     }
 }
