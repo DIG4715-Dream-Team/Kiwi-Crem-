@@ -12,6 +12,7 @@ TagManager:
   - Projectile
   - Turret
   - HiddenPlayer
+  - Obstacles
   layers:
   - Default
   - TransparentFX
