@@ -5,7 +5,7 @@ using UnityEngine;
 public class Deflected : MonoBehaviour
 {
     public LayerMask collisionMask;
-    private float speed = 15;
+    private float speed = 5;
 
     void Update()
     {
@@ -28,6 +28,11 @@ public class Deflected : MonoBehaviour
         {
             // Deactivate all scripts and components on the target object
             collision.gameObject.SetActive(false);
+            Destroy(gameObject);
+        }
+        
+        if (collision.gameObject.CompareTag("Obstacles"))
+        {
             Destroy(gameObject);
         }
     }
