@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class LevelWinController : MonoBehaviour
 {
-    private void OnTriggerEnter(Collision other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other != null && other.gameObject.CompareTag("Player"))
         {
