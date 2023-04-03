@@ -1,5 +1,5 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
+//using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
@@ -7,8 +7,9 @@ public class PlayerController : MonoBehaviour
 
     Rigidbody rb;
 
-    [SerializeField] private InputActionReference movement;
-    [SerializeField] private InputActionReference look;
+    //[SerializeField] private InputActionReference movement;
+    //[SerializeField] private InputActionReference keyboardMovement;
+    //[SerializeField] private InputActionReference look;
 
     public bool Died { get; private set; }
     public bool CompletedObjectives { get; private set; }
@@ -34,22 +35,22 @@ public class PlayerController : MonoBehaviour
     {
         float xMove = Input.GetAxisRaw("Horizontal");
         float zMove = Input.GetAxisRaw("Vertical");
-        float xMoveC = movement.action.ReadValue<Vector2>().x;
-        float zMoveC = look.action.ReadValue<Vector2>().y;
+        //float xMoveC = movement.action.ReadValue<Vector2>().x;
+        //float zMoveC = look.action.ReadValue<Vector2>().y;
 
         rb.velocity = (transform.right * xMove + transform.forward * zMove) * speed;
     }
 
     private void Crouching()
     {
-        if (Input.GetKeyDown(KeyCode.LeftShift) || InputActionAsset.FromJson("Sneak"))
+        if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             transform.gameObject.tag = "HiddenPlayer";
             speed = 3f;
             Debug.Log("ShiftKey is Down");
         }
 
-        if (Input.GetKeyUp(KeyCode.LeftShift) || InputActionAsset.FromJson("Sneak"))
+        if (Input.GetKeyUp(KeyCode.LeftShift))
         {
             transform.gameObject.tag = "Player";
             speed = 5f;
