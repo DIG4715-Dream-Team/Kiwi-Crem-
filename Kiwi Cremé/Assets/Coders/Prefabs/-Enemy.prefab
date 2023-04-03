@@ -158,8 +158,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.2026094, y: 0.07939608, z: 0.3839106}
-  m_Center: {x: 0, y: 0, z: 0.28}
+  m_Size: {x: 0.35, y: 0.07939608, z: 0.56}
+  m_Center: {x: 0, y: 0, z: 0.37}
 --- !u!195 &3770115913434079890
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -168,7 +168,7 @@ NavMeshAgent:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4076687450891863108}
   m_Enabled: 1
-  m_AgentTypeID: -334000983
+  m_AgentTypeID: 0
   m_Radius: 0.09597763
   m_Speed: 3.5
   m_Acceleration: 8
