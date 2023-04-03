@@ -1,4 +1,5 @@
 using UnityEngine;
+//using UnityEngine.InputSystem;
 
 public class PortalController : MonoBehaviour
 {
@@ -17,7 +18,7 @@ public class PortalController : MonoBehaviour
 
     private void PortalLocation()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0));
         {
             Ray ray = Cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
             RaycastHit hit;
