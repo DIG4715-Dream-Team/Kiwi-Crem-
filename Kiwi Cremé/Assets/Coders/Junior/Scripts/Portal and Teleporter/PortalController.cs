@@ -38,7 +38,7 @@ public class PortalController : MonoBehaviour
             {
                 Vector3 point = hit.point;
                 Debug.DrawRay(point, Vector3.up, Color.red, 5f);
-                Instantiate(exitPortal, point, Player.transform.rotation * Quaternion.Euler(0f, 180f, 0f));
+                Instantiate(exitPortal, point, Player.transform.rotation * Quaternion.Euler(0f, 360f, 0f));
             }
         }
     }
