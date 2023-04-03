@@ -16,9 +16,11 @@ public class PlayerController : MonoBehaviour
     public int Health { get; private set; }
     public bool GameOver { get; private set; }
 
-    public bool HasPearls { get; private set; }
+    public bool hasHellPearl { get; private set; }
     public int EnPearls { get; private set; }
     public int ExPearls { get; private set; }
+
+
 
     void Start()
     {
@@ -65,6 +67,22 @@ public class PlayerController : MonoBehaviour
         if (Health <= 0)
         {
             Died = true;
+        }
+    }
+
+    public void UpdatePearl(string level)
+    {
+        if (level == "Hell")
+        {
+            hasHellPearl = true;
+        }
+    }
+
+    public void UpdateObjective(string level)
+    {
+        if (level == "Hell")
+        {
+            CompletedObjectives = true;
         }
     }
 }
