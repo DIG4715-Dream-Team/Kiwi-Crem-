@@ -106,7 +106,7 @@ NavMeshSettings:
   m_BuildSettings:
     serializedVersion: 2
     agentTypeID: 0
-    agentRadius: 0.3
+    agentRadius: 0.5
     agentHeight: 2
     agentSlope: 45
     agentClimb: 0.4
@@ -114,7 +114,7 @@ NavMeshSettings:
     maxJumpAcrossDistance: 0
     minRegionArea: 2
     manualCellSize: 0
-    cellSize: 0.1
+    cellSize: 0.16666667
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
@@ -4590,6 +4590,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3735908581606924030, guid: 6dcbd2537a03d4643bf26353d3e827cd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.068
+      objectReference: {fileID: 0}
     - target: {fileID: 3770115912867110572, guid: 6dcbd2537a03d4643bf26353d3e827cd, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -4637,6 +4641,10 @@ PrefabInstance:
     - target: {fileID: 3770115912867110575, guid: 6dcbd2537a03d4643bf26353d3e827cd, type: 3}
       propertyPath: m_Name
       value: -Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 3770115913434079890, guid: 6dcbd2537a03d4643bf26353d3e827cd, type: 3}
+      propertyPath: m_AgentTypeID
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4076687450891863108, guid: 6dcbd2537a03d4643bf26353d3e827cd, type: 3}
       propertyPath: m_TagString
@@ -7927,7 +7935,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: -Player
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4183070750560833553, guid: 720eae80f6c406e41a35d187ebbdeef9, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 720eae80f6c406e41a35d187ebbdeef9, type: 3}
 --- !u!1001 &1011096799
 PrefabInstance:
