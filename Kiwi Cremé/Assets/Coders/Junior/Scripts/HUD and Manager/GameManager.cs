@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -59,6 +60,7 @@ public class GameManager : MonoBehaviour
             ButtonManager.inMainMenu = true;
         }
     }
+
     private void Timers()
     {
         timeLeft = timeLeft -= Time.deltaTime;
@@ -83,18 +85,21 @@ public class GameManager : MonoBehaviour
             Time.timeScale = 0;
             ButtonManager.EndMenu.SetActive(true);
             ButtonManager.MiddleText.text = "You have died!";
+            Cursor.lockState = CursorLockMode.None;
         }
         else if (Player.CompletedObjectives == true)
         {
             Time.timeScale = 0;
             ButtonManager.EndMenu.SetActive(true);
             ButtonManager.MiddleText.text = "You reached the water!";
+            Cursor.lockState = CursorLockMode.None;
         }
         else if (timeLeft <= 0)
         {
             Time.timeScale = 0;
             ButtonManager.EndMenu.SetActive(true);
             ButtonManager.MiddleText.text = "You failed to reach the water in time!";
+            Cursor.lockState = CursorLockMode.None;
         }
     }
 }
