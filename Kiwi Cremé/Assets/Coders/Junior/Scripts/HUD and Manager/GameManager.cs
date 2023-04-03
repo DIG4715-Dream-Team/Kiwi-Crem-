@@ -75,7 +75,7 @@ public class GameManager : MonoBehaviour
     private void UpdatePearAmount()
     {
             EnPearlInfo.text = $"Entry Portal Pearls:{Player.EnPearls}";
-            ExPearlInfo.text = $"Entry Portal Pearls:{Player.ExPearls}";
+            ExPearlInfo.text = $"Exit Portal Pearls:{Player.ExPearls}";
     }
 
     public void GameFinishedLogic()
@@ -91,14 +91,14 @@ public class GameManager : MonoBehaviour
         {
             Time.timeScale = 0;
             ButtonManager.EndMenu.SetActive(true);
-            ButtonManager.MiddleText.text = "You reached the water!";
+            ButtonManager.MiddleText.text = "You completed the level!";
             Cursor.lockState = CursorLockMode.None;
         }
         else if (timeLeft <= 0)
         {
             Time.timeScale = 0;
             ButtonManager.EndMenu.SetActive(true);
-            ButtonManager.MiddleText.text = "You failed to reach the water in time!";
+            ButtonManager.MiddleText.text = "You failed to complete the objective in time!";
             Cursor.lockState = CursorLockMode.None;
         }
     }
