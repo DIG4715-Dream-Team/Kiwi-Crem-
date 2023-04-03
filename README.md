@@ -33,3 +33,5 @@ All music and sounds are royalty free
 Missing assets: 
 
 There were complications with the implementaion of the controller funtion. We chose to Submit without in order to preserve more important aspects of the game.  
+
+Main Menu assests must be updated in order to fit game theme 
