@@ -118,6 +118,17 @@
                 },
                 {
                     "name": "",
+                    "id": "3c5e6af4-5fe7-4493-ab16-f2147821c4f1",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Shield",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "48fa4d4c-073a-4778-9c14-2d5d268e900e",
                     "path": "<Gamepad>/leftTrigger",
                     "interactions": "",
@@ -148,6 +159,28 @@
             "devices": [
                 {
                     "devicePath": "<XInputController>",
+                    "isOptional": true,
+                    "isOR": false
+                }
+            ]
+        },
+        {
+            "name": "Keyboard",
+            "bindingGroup": "Keyboard",
+            "devices": [
+                {
+                    "devicePath": "<Keyboard>",
+                    "isOptional": true,
+                    "isOR": false
+                }
+            ]
+        },
+        {
+            "name": "Mouse",
+            "bindingGroup": "Mouse",
+            "devices": [
+                {
+                    "devicePath": "<Mouse>",
                     "isOptional": true,
                     "isOR": false
                 }

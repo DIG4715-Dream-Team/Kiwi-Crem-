@@ -1,6 +1,6 @@
 using System.Collections;
 using UnityEngine;
-
+//using UnityEngine.InputSystem;
 
 public class PlayerCamController : MonoBehaviour
 {
@@ -20,6 +20,8 @@ public class PlayerCamController : MonoBehaviour
     private void MouseLook()
     {
         // Get the mouse input
+        //float mouseX = Mouse.current.delta.x.ReadValue()*Time.smoothDeltaTime * sensitivityX;
+        //float mouseY = Mouse.current.delta.y.ReadValue()* Time.smoothDeltaTime * sensitivityY;
         float mouseX = Input.GetAxis("Mouse X") * sensitivityX;
         float mouseY = Input.GetAxis("Mouse Y") * sensitivityY;
 
