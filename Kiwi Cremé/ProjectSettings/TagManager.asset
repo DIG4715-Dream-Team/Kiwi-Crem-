@@ -13,6 +13,7 @@ TagManager:
   - Turret
   - HiddenPlayer
   - Obstacles
+  - Enemy
   layers:
   - Default
   - TransparentFX
