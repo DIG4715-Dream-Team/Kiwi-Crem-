@@ -16,14 +16,23 @@ public class PearlController : MonoBehaviour
         scene = currentScene.name;
     }
 
+    private void Update()
+    {
+        if (Input.GetKey(KeyCode.F))
+        {
+            Debug.Log("Ping");
+        }
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other != null && other.gameObject.CompareTag("Player"))
         {
-            if (Input.GetKeyDown(KeyCode.F) && scene == "Hell")
-            {
-                Player.UpdatePearl("Hell");
-            }
+            Player.UpdatePearl("Hell");
+            Destroy(gameObject);
+            //if (Input.GetKey(KeyCode.F) && scene == "Hell")
+            //{
+            //}
         }
     }
 }
