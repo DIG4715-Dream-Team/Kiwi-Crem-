@@ -1,5 +1,5 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
+//using UnityEngine.InputSystem;
 
 public class PortalController : MonoBehaviour
 {
@@ -18,7 +18,7 @@ public class PortalController : MonoBehaviour
 
     private void PortalLocation()
     {
-        if (Input.GetMouseButtonDown(0) || InputActionAsset.FromJson("Entry Portal"));
+        if (Input.GetMouseButtonDown(0))
         {
             Ray ray = Cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
             RaycastHit hit;
@@ -30,7 +30,7 @@ public class PortalController : MonoBehaviour
             }
         }
 
-        if (Input.GetMouseButtonDown(1) || InputActionAsset.FromJson("Exit Portal"))
+        if (Input.GetMouseButtonDown(1))
         {
             Ray ray = Cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
             RaycastHit hit;
@@ -38,7 +38,7 @@ public class PortalController : MonoBehaviour
             {
                 Vector3 point = hit.point;
                 Debug.DrawRay(point, Vector3.up, Color.red, 5f);
-                Instantiate(exitPortal, point, Player.transform.rotation * Quaternion.Euler(0f, 180f, 0f));
+                Instantiate(exitPortal, point, Player.transform.rotation * Quaternion.Euler(0f, 360f, 0f));
             }
         }
     }

@@ -58,7 +58,7 @@ public class ButtonManager : MonoBehaviour
     {
         if (currentScene == "Tiny_Shell_MainMenu")
         {
-            MiddleText.text = "Tiny Shell\nGet to the shore as fast as possible";
+            MiddleText.text = "Place Holder";
             mainMenu.SetActive(true);
             aboutMenu.SetActive(false);
             controlMenu.SetActive(false);
@@ -159,7 +159,7 @@ public class ButtonManager : MonoBehaviour
         pauseMenu.SetActive(false);
         aboutMenu.SetActive(false);
         CheckActivity();
-        MiddleText.text = "Controls\nW,A,S, and D to move\nF to activate ability";
+        MiddleText.text = "Controls\nW,A,S, and D to move\nE to activate temporary shield";
     }
 
     public void Credit()
@@ -169,7 +169,7 @@ public class ButtonManager : MonoBehaviour
         pauseMenu.SetActive(false);
         aboutMenu.SetActive(false);
         CheckActivity();
-        MiddleText.text = "Credit\nCameron Welsh - Art | Pablo Sarria - Tech | Junior Rojas - Code";
+        MiddleText.text = "Credit\nCameron Welsh - Art | Pablo Sarria - Tech | Junior Rojas - Code\n";
     }
 
     public void Back()

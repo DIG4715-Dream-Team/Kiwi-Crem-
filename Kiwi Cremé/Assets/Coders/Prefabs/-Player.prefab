@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 602717030185709713}
   - component: {fileID: 602717030185709714}
   - component: {fileID: 602717030185709715}
-  - component: {fileID: 602717030185709712}
   - component: {fileID: 602717030185709725}
   - component: {fileID: 602717030185709724}
-  - component: {fileID: 4183070750560833553}
+  - component: {fileID: 8219034264723838610}
+  - component: {fileID: 3487952819254655212}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Player
@@ -31,8 +31,8 @@ Transform:
   m_GameObject: {fileID: 602717030185709718}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0.518, z: 0}
-  m_LocalScale: {x: 1, y: 0.5564699, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 10, y: 5.564699, z: 10}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 602717031911150025}
   m_Father: {fileID: 602717031901938372}
@@ -45,7 +45,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 602717030185709718}
-  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: -5750084716789328873, guid: 96d370f8122b4f14988125ea6f32e1b5, type: 3}
 --- !u!23 &602717030185709715
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -66,7 +66,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: -4125471728267972529, guid: 96d370f8122b4f14988125ea6f32e1b5, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -88,20 +88,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &602717030185709712
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 602717030185709718}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &602717030185709725
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -115,8 +101,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  movement: {fileID: -8917455636437471849, guid: 4096310c6b400ac4bbbd419dbd39d2df, type: 3}
-  look: {fileID: -2152600505348431698, guid: 4096310c6b400ac4bbbd419dbd39d2df, type: 3}
 --- !u!54 &602717030185709724
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -133,7 +117,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &4183070750560833553
+--- !u!114 &8219034264723838610
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -142,27 +126,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 602717030185709718}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Script: {fileID: 11500000, guid: 28353e8be00c5c74cb5e7730ccde9b51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: 4096310c6b400ac4bbbd419dbd39d2df, type: 3}
-  m_NotificationBehavior: 0
-  m_UIInputModule: {fileID: 0}
-  m_DeviceLostEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_DeviceRegainedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ControlsChangedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ActionEvents: []
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
-  m_DefaultActionMap: Player
-  m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
+  player: {fileID: 602717030185709713}
+  spawnDistance: 3
+  Deflector: {fileID: 4751864965153421380, guid: a610f3d1183aa894f88499ead393ff19, type: 3}
+  canspawn: 1
+--- !u!64 &3487952819254655212
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 602717030185709718}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5750084716789328873, guid: 96d370f8122b4f14988125ea6f32e1b5, type: 3}
 --- !u!1 &602717031901938373
 GameObject:
   m_ObjectHideFlags: 0
@@ -208,7 +192,7 @@ GameObject:
   - component: {fileID: 602717031911150024}
   - component: {fileID: 602717031911150039}
   - component: {fileID: 602717031911150038}
-  - component: {fileID: 2906789340776028903}
+  - component: {fileID: 2833817190119526432}
   m_Layer: 0
   m_Name: Player Cam
   m_TagString: Untagged
@@ -224,7 +208,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 602717031911150030}
   m_LocalRotation: {x: 0.08715578, y: -0, z: -0, w: 0.9961947}
-  m_LocalPosition: {x: 0.5669999, y: 1.9650004, z: -2.22}
+  m_LocalPosition: {x: 0.091, y: 0.2, z: -0.228}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -313,7 +297,7 @@ MonoBehaviour:
   Player: {fileID: 602717030185709718}
   entryPortal: {fileID: 4049973646171307077, guid: 429024b4ef577134d8cda5108dffcd7f, type: 3}
   exitPortal: {fileID: 1876327593969984006, guid: be525a916f0cb0740bb5877dda41de8d, type: 3}
---- !u!114 &2906789340776028903
+--- !u!114 &2833817190119526432
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
