@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7035404384213781508}
   - component: {fileID: 6200643694178517921}
   - component: {fileID: 8208351141157025643}
+  - component: {fileID: 3126644115536923194}
   m_Layer: 0
   m_Name: Large Rock Column_square
   m_TagString: Untagged
@@ -83,3 +84,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &3126644115536923194
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7703714681184687806}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.128733, y: 1.1521804, z: 1.3349596}
+  m_Center: {x: -0.0021931147, y: -0.01391647, z: 0.6025205}
