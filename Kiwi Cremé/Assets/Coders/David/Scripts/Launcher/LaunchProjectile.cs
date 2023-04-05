@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class LaunchProjectile : MonoBehaviour
@@ -24,7 +22,7 @@ public class LaunchProjectile : MonoBehaviour
             GameObject ball = Instantiate(Projectile, transform.position, transform.rotation);
             ball.GetComponent<Rigidbody>().AddRelativeForce(new Vector3(0, launchVelocity,0));
 
-            source.PlayOneShot(FireBall_Sound);
+            audioSource.PlayOneShot(Fireball_Sound);
 
             Destroy(ball, 4f);
         }
