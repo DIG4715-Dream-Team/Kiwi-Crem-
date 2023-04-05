@@ -30,9 +30,6 @@ public class PearlController : MonoBehaviour
         {
             Player.UpdatePearl("Hell");
             Destroy(gameObject);
-            //if (Input.GetKey(KeyCode.F) && scene == "Hell")
-            //{
-            //}
         }
     }
 }

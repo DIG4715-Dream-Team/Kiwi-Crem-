@@ -74,8 +74,8 @@ public class GameManager : MonoBehaviour
 
     private void UpdatePearlAmount()
     {
-        EnPearlInfo.text = $"Entry Portal Pearls:{Player.EnPearls}";
-        ExPearlInfo.text = $"Exit Portal Pearls:{Player.ExPearls}";
+        EnPearlInfo.text = $"Entry Pearls:{Player.EnPearls}";
+        ExPearlInfo.text = $"Exit Pearls:{Player.ExPearls}";
     }
 
     public void GameFinishedLogic()
