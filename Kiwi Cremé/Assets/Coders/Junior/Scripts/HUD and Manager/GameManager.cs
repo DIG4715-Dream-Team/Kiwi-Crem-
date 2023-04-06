@@ -41,7 +41,7 @@ public class GameManager : MonoBehaviour
         {
             GameFinishedLogic();
             UpdateHUDElements();
-            UpdatePearAmount();
+            UpdatePearlAmount();
         }
     }
 
@@ -72,10 +72,10 @@ public class GameManager : MonoBehaviour
         Timer.text = $"Time Left:{timeLeft.ToString("F1")}";
     }
 
-    private void UpdatePearAmount()
+    private void UpdatePearlAmount()
     {
-            EnPearlInfo.text = $"Entry Portal Pearls:{Player.EnPearls}";
-            ExPearlInfo.text = $"Exit Portal Pearls:{Player.ExPearls}";
+        EnPearlInfo.text = $"Entry Pearls:{Player.EnPearls}";
+        ExPearlInfo.text = $"Exit Pearls:{Player.ExPearls}";
     }
 
     public void GameFinishedLogic()

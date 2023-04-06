@@ -4,6 +4,7 @@ using System.Collections;
 public class Shield : MonoBehaviour
 {
     [SerializeField] private Transform player;
+    [SerializeField] private Transform cam;
     [SerializeField] private float spawnDistance = 3f;
     [SerializeField] private GameObject Deflector;
     public bool canspawn = true;
@@ -13,7 +14,7 @@ public class Shield : MonoBehaviour
     {
         if (canspawn == true && Input.GetKeyDown(KeyCode.E))
         {
-            Instantiate(Deflector, player.position + player.forward * spawnDistance, player.rotation);
+            Instantiate(Deflector, player.position + player.forward * spawnDistance, cam.rotation);
             canspawn = false;
             StartCoroutine(SpawnCooldown());
         }

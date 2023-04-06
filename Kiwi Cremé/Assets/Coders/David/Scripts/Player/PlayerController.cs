@@ -7,10 +7,6 @@ public class PlayerController : MonoBehaviour
 
     Rigidbody rb;
 
-    //[SerializeField] private InputActionReference movement;
-    //[SerializeField] private InputActionReference keyboardMovement;
-    //[SerializeField] private InputActionReference look;
-
     public bool Died { get; private set; }
     public bool CompletedObjectives { get; private set; }
     public int Health { get; private set; }
@@ -38,8 +34,6 @@ public class PlayerController : MonoBehaviour
     {
         float xMove = Input.GetAxisRaw("Horizontal");
         float zMove = Input.GetAxisRaw("Vertical");
-        //float xMoveC = movement.action.ReadValue<Vector2>().x;
-        //float zMoveC = look.action.ReadValue<Vector2>().y;
 
         rb.velocity = (transform.right * xMove + transform.forward * zMove) * speed;
     }
@@ -84,6 +78,19 @@ public class PlayerController : MonoBehaviour
         if (level == "Hell")
         {
             CompletedObjectives = true;
+        }
+    }
+
+    public void UpdatePearlAmount(string type)
+    {
+        if (type == "Entry")
+        {
+            EnPearls = EnPearls + 1;
+        }
+
+        if (type == "Exit")
+        {
+            ExPearls = ExPearls + 1;
         }
     }
 }
