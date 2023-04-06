@@ -13,16 +13,16 @@ public class PortalPearlController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other == GameObject.FindGameObjectWithTag("Player"))
+        if (other.gameObject.CompareTag("Player"))
         {
             if (gameObject.CompareTag("EntryPearl"))
             {
-                Player.UpdatePearlAmount("Entry");
+                Player.UpdatePearlAmount("Entry", 1);
                 Destroy(gameObject);
             }
             if (gameObject.CompareTag("ExitPearl"))
             {
-                Player.UpdatePearlAmount("Exit");
+                Player.UpdatePearlAmount("Exit", 1);
                 Destroy(gameObject);
             }
         }

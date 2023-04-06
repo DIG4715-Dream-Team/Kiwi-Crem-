@@ -6,8 +6,6 @@ public class ButtonManager : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI middleText;
     public TextMeshProUGUI MiddleText { get; private set; }
-    [SerializeField] private TextMeshProUGUI statusText;
-    public TextMeshProUGUI StatusText { get; private set; }
     [SerializeField] public string currentScene { get; private set; }
     [SerializeField] public Scene activeScene { get; private set; }
     private bool isPaused;
@@ -29,13 +27,10 @@ public class ButtonManager : MonoBehaviour
     private GameObject player;
     private PlayerController Player;
 
-    private float timer = 5;
-
     void Start()
     {
         EndMenu = endMenu;
         MiddleText = middleText;
-        StatusText = statusText;
         SceneCheck();
         if (currentScene != "Tiny_Shell_MainMenu")
         {
@@ -48,35 +43,6 @@ public class ButtonManager : MonoBehaviour
     void Update()
     {
         PauseLogic();
-        //Timer();
-    }
-
-    private void Timer()
-    {
-        timer -= Time.deltaTime;
-    }
-
-    public void Status(string condition)
-    {
-        if (condition == "Entry Portal")
-        {
-            StatusText.text = "You do not have an entry pearl";
-            Timer();
-            if (timer <= 0.1f)
-            {
-                StatusText.text = "";
-            }
-        }
-
-        if (condition == "Exit Portal")
-        {
-            StatusText.text = "You do not have an exit pearl";
-            Timer();
-            if (timer <= 0.1f)
-            {
-                StatusText.text = "";
-            }
-        }
     }
 
     private void HUDPreset()
