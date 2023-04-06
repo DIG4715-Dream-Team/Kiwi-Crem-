@@ -14,6 +14,8 @@ TagManager:
   - HiddenPlayer
   - Obstacles
   - Enemy
+  - EntryPearl
+  - ExitPearl
   layers:
   - Default
   - TransparentFX

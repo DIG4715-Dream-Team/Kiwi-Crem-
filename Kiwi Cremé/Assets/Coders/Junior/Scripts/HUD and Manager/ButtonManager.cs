@@ -4,33 +4,24 @@ using UnityEngine.SceneManagement;
 
 public class ButtonManager : MonoBehaviour
 {
-    [SerializeField]
-    private TextMeshProUGUI middleText;
+    [SerializeField] private TextMeshProUGUI middleText;
     public TextMeshProUGUI MiddleText { get; private set; }
-    [SerializeField]
-    public string currentScene { get; private set; }
-    [SerializeField]
-    public Scene activeScene { get; private set; }
+    [SerializeField] public string currentScene { get; private set; }
+    [SerializeField] public Scene activeScene { get; private set; }
     private bool isPaused;
 
-    [SerializeField]
-    private GameObject mainMenu;
-    [HideInInspector]
-    public bool inMainMenu;
-    [SerializeField]
-    private GameObject aboutMenu;
+    [SerializeField] private GameObject mainMenu;
+    [HideInInspector] public bool inMainMenu;
+    [SerializeField] private GameObject aboutMenu;
     private bool inAboutMenu;
     [SerializeField]
     private GameObject controlMenu;
     private bool inControlMenu;
-    [SerializeField]
-    private GameObject creditMenu;
+    [SerializeField] private GameObject creditMenu;
     private bool inCreditMenu;
-    [SerializeField]
-    private GameObject pauseMenu;
+    [SerializeField] private GameObject pauseMenu;
     private bool inPauseMenu;
-    [SerializeField]
-    private GameObject endMenu;
+    [SerializeField] private GameObject endMenu;
     public GameObject EndMenu { get; private set; }
 
     private GameObject player;
@@ -122,7 +113,6 @@ public class ButtonManager : MonoBehaviour
     {
         Time.timeScale = 1;
         PauseLogic();
-        MiddleText.text = "";
     }
 
     private void CheckActivity()
