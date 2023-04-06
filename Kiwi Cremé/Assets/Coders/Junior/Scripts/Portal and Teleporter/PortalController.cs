@@ -1,5 +1,5 @@
+using System.Collections;
 using UnityEngine;
-//using UnityEngine.InputSystem;
 
 public class PortalController : MonoBehaviour
 {
@@ -10,21 +10,29 @@ public class PortalController : MonoBehaviour
     public GameObject entryPortal;
     public GameObject exitPortal;
 
-    [SerializeField] private Transform entry;
-    [SerializeField] private Transform exit;
+    public bool creatingEntry { get; private set; }
+    public bool creatingExit { get; private set; }
 
-    private GameObject buttonManager;
-    private ButtonManager ButtonManager;
+    private GameObject gameManager;
+    private GameManager GameManager;
+
+    private GameObject[] EntryPad;
+    private GameObject[] ExitPad;
+    private GameObject EntryPortal;
+    private GameObject ExitPortal;
+
+    private int entryIteration = 1;
+    private int exitIteration = 1;
 
     float timer = 5f;
 
     private void Start()
     {
         PlayerC = Player.GetComponent<PlayerController>();
-        entry = GameObject.FindGameObjectWithTag("EntryPad").transform;
-        exit = GameObject.FindGameObjectWithTag("ExitPad").transform;
-        buttonManager = GameObject.FindGameObjectWithTag("ButtonManager");
-        ButtonManager = buttonManager.GetComponent<ButtonManager>();
+        gameManager = GameObject.FindGameObjectWithTag("ButtonManager");
+        GameManager = gameManager.GetComponent<GameManager>();
+        EntryPad = GameObject.FindGameObjectsWithTag("EntryPad");
+        ExitPad = GameObject.FindGameObjectsWithTag("ExitPad");
     }
     void Update()
     {
@@ -33,53 +41,59 @@ public class PortalController : MonoBehaviour
 
     private void PortalLocation()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && PlayerC.EnPearls > 0)
         {
             Ray ray = Cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit) && PlayerC.EnPearls >= 1 && hit.transform.tag == "EntryPad")
             {
+                foreach (GameObject entrypad in EntryPad)
+                {
+                    entrypad.SetActive(true);
+                }
+                for (int i = 0; i < entryIteration; i++)
+                {
+                    EntryPortal = GameObject.FindGameObjectWithTag("Entry");
+                    Destroy(EntryPortal);
+                }
                 Vector3 point = hit.point;
                 Debug.DrawRay(point, Vector3.up, Color.red, 5f);
-                Instantiate(entryPortal, point, Player.transform.rotation * Quaternion.Euler(0f, 90f, 0f));
+                Instantiate(entryPortal, point, Quaternion.Euler(0f, hit.transform.localEulerAngles.y, 0f));
+                hit.transform.gameObject.SetActive(false);
+                creatingEntry = false;
+                PlayerC.UpdatePearlAmount("Entry", -1);
             }
             else if (Physics.Raycast(ray, out hit) && PlayerC.EnPearls == 0 && hit.transform.tag == "EntryPad")
             {
-                ButtonManager.Status("Entry Portal");
-                if (timer == 5f)
-                {
-                    timer = timer -= Time.deltaTime;
-                }
-                if (timer <= 0.1f)
-                {
-                    ButtonManager.MiddleText.text = "";
-                    timer = 5f;
-                }
+                GameManager.Status("Entry Portal");
             }
         }
 
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButtonDown(1) && PlayerC.ExPearls > 0)
         {
             Ray ray = Cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit) && PlayerC.ExPearls >= 1 && hit.transform.tag == "ExitPad")
             {
+                foreach (GameObject exitpad in ExitPad)
+                {
+                    exitpad.SetActive(true);
+                }
+                for (int i = 0; i < exitIteration; i++)
+                {
+                    ExitPortal = GameObject.FindGameObjectWithTag("Exit");
+                    Destroy(ExitPortal);
+                }
                 Vector3 point = hit.point;
                 Debug.DrawRay(point, Vector3.up, Color.red, 5f);
-                Instantiate(exitPortal, point, Player.transform.rotation * Quaternion.Euler(0f, -exit.transform.localRotation.eulerAngles.y, 0f));
+                Instantiate(exitPortal, point, Quaternion.Euler(0f, hit.transform.localEulerAngles.y, 0f));
+                hit.transform.gameObject.SetActive(false);
+                creatingExit = false;
+                PlayerC.UpdatePearlAmount("Exit", -1);
             }
             else if (Physics.Raycast(ray, out hit) && PlayerC.ExPearls == 0 && hit.transform.tag == "ExitPad")
             {
-                ButtonManager.Status("Exit Portal");
-                if (timer == 5f)
-                {
-                    timer = timer -= Time.deltaTime;
-                }
-                if (timer <= 0.1f)
-                {
-                    ButtonManager.MiddleText.text = "";
-                    timer = 5f;
-                }
+                GameManager.Status("Exit Portal");
             }
         }
     }
