@@ -81,16 +81,16 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void UpdatePearlAmount(string type)
+    public void UpdatePearlAmount(string type, int change)
     {
         if (type == "Entry")
         {
-            EnPearls = EnPearls + 1;
+            EnPearls = EnPearls + change;
         }
 
         if (type == "Exit")
         {
-            ExPearls = ExPearls + 1;
+            ExPearls = ExPearls + change;
         }
     }
 }
