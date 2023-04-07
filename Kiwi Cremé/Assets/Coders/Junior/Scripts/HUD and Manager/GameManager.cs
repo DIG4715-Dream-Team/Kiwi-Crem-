@@ -105,12 +105,6 @@ public class GameManager : MonoBehaviour
 
     public void Status(string condition)
     {
-        float Timer = 5f;
-        Timer -= Time.deltaTime;
-        if (Timer <= 0.1f)
-        {
-            StatusText.text = "";
-        }
         if (condition == "Entry Portal")
         {
             StatusText.text = "You do not have an entry pearl";
