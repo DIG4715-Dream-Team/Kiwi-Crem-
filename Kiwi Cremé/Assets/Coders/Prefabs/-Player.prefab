@@ -130,6 +130,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 602717030185709713}
+  cam: {fileID: 602717031911150025}
   spawnDistance: 3
   Deflector: {fileID: 4751864965153421380, guid: a610f3d1183aa894f88499ead393ff19, type: 3}
   canspawn: 1
@@ -295,6 +296,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Cam: {fileID: 602717031911150027}
   Player: {fileID: 602717030185709718}
+  PlayerC: {fileID: 0}
   entryPortal: {fileID: 4049973646171307077, guid: 429024b4ef577134d8cda5108dffcd7f, type: 3}
   exitPortal: {fileID: 1876327593969984006, guid: be525a916f0cb0740bb5877dda41de8d, type: 3}
 --- !u!114 &2833817190119526432
