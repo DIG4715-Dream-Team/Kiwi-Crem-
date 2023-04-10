@@ -5,7 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Alpha Build.unity
     guid: 8552961077efa284e933ff67b8486c44
+  - enabled: 0
+    path: Assets/Techs/Pablo/Hell.unity
+    guid: 77ac7909d20fee140b65fdea35503706
+  - enabled: 1
+    path: Assets/Scenes/Heaven.unity
+    guid: e58683c574dde6648a0976e61c43535a
   m_configObjects: {}

@@ -1,5 +1,5 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
+//using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
@@ -7,21 +7,21 @@ public class PlayerController : MonoBehaviour
 
     Rigidbody rb;
 
-    [SerializeField] private InputActionReference movement;
-    [SerializeField] private InputActionReference look;
-
     public bool Died { get; private set; }
     public bool CompletedObjectives { get; private set; }
     public int Health { get; private set; }
     public bool GameOver { get; private set; }
 
-    public bool HasPearls { get; private set; }
+    public bool hasHellPearl { get; private set; }
     public int EnPearls { get; private set; }
     public int ExPearls { get; private set; }
+
+
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        Health = 5;
     }
 
     private void Update()
@@ -34,22 +34,20 @@ public class PlayerController : MonoBehaviour
     {
         float xMove = Input.GetAxisRaw("Horizontal");
         float zMove = Input.GetAxisRaw("Vertical");
-        float xMoveC = movement.action.ReadValue<Vector2>().x;
-        float zMoveC = look.action.ReadValue<Vector2>().y;
 
         rb.velocity = (transform.right * xMove + transform.forward * zMove) * speed;
     }
 
     private void Crouching()
     {
-        if (Input.GetKeyDown(KeyCode.LeftShift) || InputActionAsset.FromJson("Sneak"))
+        if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             transform.gameObject.tag = "HiddenPlayer";
             speed = 3f;
             Debug.Log("ShiftKey is Down");
         }
 
-        if (Input.GetKeyUp(KeyCode.LeftShift) || InputActionAsset.FromJson("Sneak"))
+        if (Input.GetKeyUp(KeyCode.LeftShift))
         {
             transform.gameObject.tag = "Player";
             speed = 5f;
@@ -64,6 +62,35 @@ public class PlayerController : MonoBehaviour
         if (Health <= 0)
         {
             Died = true;
+        }
+    }
+
+    public void UpdatePearl(string level)
+    {
+        if (level == "Hell")
+        {
+            hasHellPearl = true;
+        }
+    }
+
+    public void UpdateObjective(string level)
+    {
+        if (level == "Hell")
+        {
+            CompletedObjectives = true;
+        }
+    }
+
+    public void UpdatePearlAmount(string type, int change)
+    {
+        if (type == "Entry")
+        {
+            EnPearls = EnPearls + change;
+        }
+
+        if (type == "Exit")
+        {
+            ExPearls = ExPearls + change;
         }
     }
 }

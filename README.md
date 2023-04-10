@@ -1,7 +1,37 @@
 # Kiwi-Crem-
 
-Gameplay Test Requirement
-Our game has 3 game mechanics that are functional though need more tweaking to be perfect. These mechanics are crouching using the LeftShift button which will be used to lower detection from enemies, and also lowers the player's speed by half. Second mechanic is the sheild mechanic which will deflect all projectiles, you can spawn this sheild using the "E" button. Last mechanic is the portal the mechanic where you can spawn an entrance portal using the "LeftMouse Button" on a blue tile to spwan a blue portal and use the "RightMouse Button" on the orange tile which will spawn an orange portal. When you spawn both portals, if you enter the blue portal you will come out of the organe portal. You use the mouse to move the camera around and WASD to move around.
+Ripple 
+KiwiCreme Interactive
+Game Play 
 
-Art Test Requirement
-We have 10 unique models which you will be able to see if you look left from where you spawn in the scene you will see a row of 10 models in a line. 5 of these models are textured completely.
+The goal of the game is avoid snake and eye enemies. Use mechanics to survive and collect the portal flame to escape hell. 
+
+Escape with the portal fire to win 
+dying is a loss
+
+WASD are the movement keys 
+
+Three main mechanicas have been implemented and are funtional in the Hell level. 
+
+LeftShift used to croutch which the player will use to avoid enemys and attacks 
+E allows player to deflect enemy attacks 
+Left Mouse Click will spawn blue portal 
+Right Mouse CLick will spawn orange portal 
+
+Entering either portal will allow the player to exit from the opposite. 
+
+All art was produced by team artists 
+All Textures were either produced by artists or from supported texturing software 
+
+Main animation of the level is a rune at the end of the level. 
+The particle effect for this level can be seen in the rune and will be used as fire around the edges of the map in the final version of game. 
+
+All music and sounds are royalty free
+
+
+
+Missing assets: 
+
+There were complications with the implementaion of the controller funtion. We chose to Submit without in order to preserve more important aspects of the game.  
+
+Main Menu assests must be updated in order to fit game theme 
