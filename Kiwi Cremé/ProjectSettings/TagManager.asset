@@ -16,6 +16,8 @@ TagManager:
   - Enemy
   - EntryPearl
   - ExitPearl
+  - Deflector
+  - BoostObject
   layers:
   - Default
   - TransparentFX
