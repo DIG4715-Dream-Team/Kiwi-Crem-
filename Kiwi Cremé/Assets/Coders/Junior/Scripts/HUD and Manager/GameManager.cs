@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI Health;
     [SerializeField] private TextMeshProUGUI Timer;
     private float timeLeft;
+    private float statusTime;
     [SerializeField] private TextMeshProUGUI EnPearlInfo;
     [SerializeField] private TextMeshProUGUI ExPearlInfo;
     [SerializeField] private TextMeshProUGUI statusText;
@@ -17,18 +18,20 @@ public class GameManager : MonoBehaviour
 
     private GameObject buttonManager;
     private ButtonManager ButtonManager;
-    
+
+    private bool StartTimer = false;
 
     void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
         timeLeft = 90;
+        statusTime = 5;
         buttonManager = GameObject.FindGameObjectWithTag("ButtonManager");
         ButtonManager = buttonManager.GetComponent<ButtonManager>();
         StatusText = statusText;
         SceneCheck();
-        if (ButtonManager.currentScene != "Tiny_Shell_MainMenu")
+        if (ButtonManager.currentScene != "MainMenu")
         {
+            Cursor.lockState = CursorLockMode.Locked;
             player = GameObject.FindGameObjectWithTag("Player");
             Player = player.GetComponent<PlayerController>();
         }
@@ -37,7 +40,7 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if (ButtonManager.currentScene != "Tiny_Shell_MainMenu")
+        if (ButtonManager.currentScene != "MainMenu")
         {
             GameFinishedLogic();
             UpdateHUDElements();
@@ -47,7 +50,7 @@ public class GameManager : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (ButtonManager.currentScene != "Tiny_Shell_MainMenu")
+        if (ButtonManager.currentScene != "MainMenu")
         {
             Timers();
         }
@@ -55,7 +58,7 @@ public class GameManager : MonoBehaviour
 
     private void SceneCheck()
     {
-        if (ButtonManager.currentScene == "Tiny_Shell_MainMenu")
+        if (ButtonManager.currentScene == "MainMenu")
         {
             ButtonManager.inMainMenu = true;
         }
@@ -64,6 +67,16 @@ public class GameManager : MonoBehaviour
     private void Timers()
     {
         timeLeft = timeLeft -= Time.deltaTime;
+        if (StartTimer == true)
+        {
+            statusTime = statusTime -= Time.deltaTime;
+            if (statusTime <= 0.1f)
+            {
+                StatusText.text = "";
+                StartTimer = false;
+                statusTime = 5;
+            }
+        }
     }
 
     private void UpdateHUDElements()
@@ -78,7 +91,7 @@ public class GameManager : MonoBehaviour
         ExPearlInfo.text = $"Exit Pearls:{Player.ExPearls}";
     }
 
-    public void GameFinishedLogic()
+    private void GameFinishedLogic()
     {
         if (Player.Died == true)
         {
@@ -108,23 +121,13 @@ public class GameManager : MonoBehaviour
         if (condition == "Entry Portal")
         {
             StatusText.text = "You do not have an entry pearl";
-            float Timer = 5f;
-            Timer -= Time.deltaTime;
-            if (Timer <= 0.1f)
-            {
-                StatusText.text = "";
-            }
+            StartTimer = true;
         }
 
         if (condition == "Exit Portal")
         {
             StatusText.text = "You do not have an exit pearl";
-            float Timer = 5f;
-            Timer -= Time.deltaTime;
-            if (Timer <= 0.1f)
-            {
-                StatusText.text = "";
-            }
+            StartTimer = true;
         }
     }
 }
