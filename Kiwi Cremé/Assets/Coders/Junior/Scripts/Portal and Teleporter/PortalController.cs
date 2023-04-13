@@ -24,12 +24,10 @@ public class PortalController : MonoBehaviour
     private int entryIteration = 1;
     private int exitIteration = 1;
 
-    float timer = 5f;
-
     private void Start()
     {
         PlayerC = Player.GetComponent<PlayerController>();
-        gameManager = GameObject.FindGameObjectWithTag("ButtonManager");
+        gameManager = GameObject.FindGameObjectWithTag("GameManager");
         GameManager = gameManager.GetComponent<GameManager>();
         EntryPad = GameObject.FindGameObjectsWithTag("EntryPad");
         ExitPad = GameObject.FindGameObjectsWithTag("ExitPad");
@@ -41,7 +39,7 @@ public class PortalController : MonoBehaviour
 
     private void PortalLocation()
     {
-        if (Input.GetMouseButtonDown(0) && PlayerC.EnPearls > 0)
+        if (Input.GetMouseButtonDown(0))
         {
             Ray ray = Cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
             RaycastHit hit;
@@ -65,11 +63,11 @@ public class PortalController : MonoBehaviour
             }
             else if (Physics.Raycast(ray, out hit) && PlayerC.EnPearls == 0 && hit.transform.tag == "EntryPad")
             {
-                GameManager.Status("Entry Portal");
+                gameManager.GetComponent<GameManager>().Status("Entry Portal");
             }
         }
 
-        if (Input.GetMouseButtonDown(1) && PlayerC.ExPearls > 0)
+        if (Input.GetMouseButtonDown(1))
         {
             Ray ray = Cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
             RaycastHit hit;
