@@ -290,7 +290,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   middleText: {fileID: 5165532762756325419}
-  statusText: {fileID: 2813840935798188086}
   mainMenu: {fileID: 5165532762283346122}
   inMainMenu: 0
   aboutMenu: {fileID: 5165532762264157941}
@@ -298,6 +297,7 @@ MonoBehaviour:
   creditMenu: {fileID: 5165532761149637484}
   pauseMenu: {fileID: 5165532761462303528}
   endMenu: {fileID: 5165532761339553500}
+  crosshair: {fileID: 7948717011209838331}
 --- !u!1 &5165532760810832503
 GameObject:
   m_ObjectHideFlags: 0
@@ -581,7 +581,7 @@ GameObject:
   - component: {fileID: 5165532761041363997}
   m_Layer: 0
   m_Name: GameManager
-  m_TagString: Untagged
+  m_TagString: GameManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -617,6 +617,7 @@ MonoBehaviour:
   Timer: {fileID: 5165532761674079288}
   EnPearlInfo: {fileID: 5165532761952742354}
   ExPearlInfo: {fileID: 5165532761074579483}
+  statusText: {fileID: 2813840935798188086}
 --- !u!1 &5165532761074579485
 GameObject:
   m_ObjectHideFlags: 0
@@ -1225,7 +1226,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: MainMenu
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &5165532761339553500
@@ -4685,7 +4686,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Hell
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &5165532762368610466
@@ -5970,7 +5971,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: MainMenu
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &5165532762756325421
@@ -6147,7 +6148,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -300}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5165532762792910865
@@ -6524,7 +6525,7 @@ GameObject:
   - component: {fileID: 8530910255083936284}
   - component: {fileID: 6297465012568617033}
   m_Layer: 5
-  m_Name: Crosshair Vert
+  m_Name: Crosshair
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

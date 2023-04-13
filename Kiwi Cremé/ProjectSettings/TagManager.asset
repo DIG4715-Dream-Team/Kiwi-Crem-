@@ -18,6 +18,7 @@ TagManager:
   - ExitPearl
   - Deflector
   - BoostObject
+  - GameManager
   layers:
   - Default
   - TransparentFX
