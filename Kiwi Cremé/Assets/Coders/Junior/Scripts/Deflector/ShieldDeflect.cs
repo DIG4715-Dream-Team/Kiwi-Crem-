@@ -2,15 +2,30 @@ using UnityEngine;
 
 public class ShieldDeflect : MonoBehaviour
 {
+    private Vector3 initialPosition;
+    private Vector3 initialVelocity;
+
+    private Rigidbody rb;
+
+    private void Start()
+    {
+        // Save the initial position and velocity of the projectile
+        initialPosition = transform.position;
+        initialVelocity = GetComponent<Rigidbody>().velocity;
+    }
+
     private void OnCollisionEnter(Collision other)
     {
-        if (other != null && gameObject.CompareTag(""))
+        if (other.gameObject.CompareTag("Projectile"))
         {
-            float rotDiff = -Quaternion.Angle(transform.rotation, other.transform.rotation);
-            rotDiff += 180;
+            // Get the velocity of the projectile
             Vector3 velocity = other.rigidbody.velocity;
-            other.transform.Rotate(Vector3.up, rotDiff);
-            other.rigidbody.velocity = velocity;
+
+            // Reverse the direction of the velocity
+            Vector3 newVelocity = -velocity;
+
+            // Set the velocity of the projectile to the new velocity
+            other.rigidbody.velocity = newVelocity;
         }
     }
 }

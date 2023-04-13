@@ -4,6 +4,10 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float speed;
+    public float normalSpeed = 5f;
+    public float boostSpeed = 15f;
+
+    private bool boosted = false;
 
     Rigidbody rb;
 
@@ -28,6 +32,7 @@ public class PlayerController : MonoBehaviour
     {
         PlayerMovement();
         Crouching();
+        SpeedBoost();
     }
 
     private void PlayerMovement()
@@ -52,6 +57,34 @@ public class PlayerController : MonoBehaviour
             transform.gameObject.tag = "Player";
             speed = 5f;
             Debug.Log("ShiftKey is Up");
+        }
+    }
+
+    private void SpeedBoost()
+    {
+        if (boosted)
+        {
+            speed = boostSpeed;
+        }
+        else
+        {
+            speed = normalSpeed;
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("BoostObject"))
+        {
+            boosted = true;
+        }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("BoostObject"))
+        {
+            boosted = false;
         }
     }
 
