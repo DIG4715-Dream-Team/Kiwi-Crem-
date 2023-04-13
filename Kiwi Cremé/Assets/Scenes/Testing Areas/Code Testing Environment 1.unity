@@ -856,6 +856,36 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &758326059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 758326057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 0c94d9f558c6ec846abb591907f64640, type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: Xbox
+  m_DefaultActionMap: Player
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 1718333498}
 --- !u!114 &993575551 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 602717030185709725, guid: 720eae80f6c406e41a35d187ebbdeef9, type: 3}
@@ -1104,6 +1134,90 @@ PrefabInstance:
       propertyPath: PlayerC
       value: 
       objectReference: {fileID: 993575551}
+    - target: {fileID: 602717031911150038, guid: 720eae80f6c406e41a35d187ebbdeef9, type: 3}
+      propertyPath: ExitAction.m_Id
+      value: 5ca76c95-3b13-413b-99be-12a6ebc553d1
+      objectReference: {fileID: 0}
+    - target: {fileID: 602717031911150038, guid: 720eae80f6c406e41a35d187ebbdeef9, type: 3}
+      propertyPath: EntryAction.m_Id
+      value: 4be12ed8-b4b3-49c3-a98f-153e82e5f008
+      objectReference: {fileID: 0}
+    - target: {fileID: 602717031911150038, guid: 720eae80f6c406e41a35d187ebbdeef9, type: 3}
+      propertyPath: ExitAction.m_Name
+      value: Exit
+      objectReference: {fileID: 0}
+    - target: {fileID: 602717031911150038, guid: 720eae80f6c406e41a35d187ebbdeef9, type: 3}
+      propertyPath: EntryAction.m_Name
+      value: Entry
+      objectReference: {fileID: 0}
+    - target: {fileID: 602717031911150038, guid: 720eae80f6c406e41a35d187ebbdeef9, type: 3}
+      propertyPath: EntryAction.m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 602717031911150038, guid: 720eae80f6c406e41a35d187ebbdeef9, type: 3}
+      propertyPath: EntryAction.m_ExpectedControlType
+      value: Button
+      objectReference: {fileID: 0}
+    - target: {fileID: 602717031911150038, guid: 720eae80f6c406e41a35d187ebbdeef9, type: 3}
+      propertyPath: ExitAction.m_SingletonActionBindings.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 602717031911150038, guid: 720eae80f6c406e41a35d187ebbdeef9, type: 3}
+      propertyPath: EntryAction.m_SingletonActionBindings.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 602717031911150038, guid: 720eae80f6c406e41a35d187ebbdeef9, type: 3}
+      propertyPath: ExitAction.m_SingletonActionBindings.Array.data[0].m_Id
+      value: ef5fc480-f5d6-485d-9e68-a96e9416a51f
+      objectReference: {fileID: 0}
+    - target: {fileID: 602717031911150038, guid: 720eae80f6c406e41a35d187ebbdeef9, type: 3}
+      propertyPath: EntryAction.m_SingletonActionBindings.Array.data[0].m_Id
+      value: dd307028-11a5-4f20-a24c-0b1e24921ad3
+      objectReference: {fileID: 0}
+    - target: {fileID: 602717031911150038, guid: 720eae80f6c406e41a35d187ebbdeef9, type: 3}
+      propertyPath: EntryAction.m_SingletonActionBindings.Array.data[1].m_Id
+      value: f34586cf-c2a1-4e48-81aa-b979e7bdeb2f
+      objectReference: {fileID: 0}
+    - target: {fileID: 602717031911150038, guid: 720eae80f6c406e41a35d187ebbdeef9, type: 3}
+      propertyPath: ExitAction.m_SingletonActionBindings.Array.data[0].m_Path
+      value: <Gamepad>/rightTrigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 602717031911150038, guid: 720eae80f6c406e41a35d187ebbdeef9, type: 3}
+      propertyPath: EntryAction.m_SingletonActionBindings.Array.data[0].m_Path
+      value: <Gamepad>/leftTrigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 602717031911150038, guid: 720eae80f6c406e41a35d187ebbdeef9, type: 3}
+      propertyPath: EntryAction.m_SingletonActionBindings.Array.data[1].m_Path
+      value: <Gamepad>/leftTrigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 602717031911150038, guid: 720eae80f6c406e41a35d187ebbdeef9, type: 3}
+      propertyPath: ExitAction.m_SingletonActionBindings.Array.data[0].m_Action
+      value: Exit
+      objectReference: {fileID: 0}
+    - target: {fileID: 602717031911150038, guid: 720eae80f6c406e41a35d187ebbdeef9, type: 3}
+      propertyPath: EntryAction.m_SingletonActionBindings.Array.data[0].m_Action
+      value: Entry
+      objectReference: {fileID: 0}
+    - target: {fileID: 602717031911150038, guid: 720eae80f6c406e41a35d187ebbdeef9, type: 3}
+      propertyPath: EntryAction.m_SingletonActionBindings.Array.data[0].m_Groups
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 602717031911150038, guid: 720eae80f6c406e41a35d187ebbdeef9, type: 3}
+      propertyPath: EntryAction.m_SingletonActionBindings.Array.data[1].m_Action
+      value: Entry
+      objectReference: {fileID: 0}
+    - target: {fileID: 602717031911150038, guid: 720eae80f6c406e41a35d187ebbdeef9, type: 3}
+      propertyPath: EntryAction.m_SingletonActionBindings.Array.data[1].m_Groups
+      value: Xbox
+      objectReference: {fileID: 0}
+    - target: {fileID: 602717031911150039, guid: 720eae80f6c406e41a35d187ebbdeef9, type: 3}
+      propertyPath: sensitivityX
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 602717031911150039, guid: 720eae80f6c406e41a35d187ebbdeef9, type: 3}
+      propertyPath: sensitivityY
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8219034264723838610, guid: 720eae80f6c406e41a35d187ebbdeef9, type: 3}
       propertyPath: cam
       value: 
@@ -1310,6 +1424,11 @@ Transform:
 --- !u!4 &1718333497 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 602717031911150025, guid: 720eae80f6c406e41a35d187ebbdeef9, type: 3}
+  m_PrefabInstance: {fileID: 1311180807}
+  m_PrefabAsset: {fileID: 0}
+--- !u!20 &1718333498 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 602717031911150027, guid: 720eae80f6c406e41a35d187ebbdeef9, type: 3}
   m_PrefabInstance: {fileID: 1311180807}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1738859006
