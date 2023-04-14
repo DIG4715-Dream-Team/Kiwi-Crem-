@@ -1,9 +1,16 @@
+using System.Collections;
 using UnityEngine;
-//using UnityEngine.InputSystem;
+using UnityEngine.InputSystem;
+
 
 public class PlayerController : MonoBehaviour
 {
     public float speed;
+    public float crouchSpeed = 2f;
+    public float normalSpeed = 5f;
+    public float boostSpeed = 15f;
+
+    private bool boosted = false;
 
     Rigidbody rb;
 
@@ -16,18 +23,22 @@ public class PlayerController : MonoBehaviour
     public int EnPearls { get; private set; }
     public int ExPearls { get; private set; }
 
+    private InputAction crouchAction;
 
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         Health = 5;
+        crouchAction = new InputAction("Crouch", InputActionType.Button, "<Keyboard>/leftShift");
+        crouchAction.Enable();
     }
 
     private void Update()
     {
         PlayerMovement();
         Crouching();
+        SpeedBoost();
     }
 
     private void PlayerMovement()
@@ -35,23 +46,56 @@ public class PlayerController : MonoBehaviour
         float xMove = Input.GetAxisRaw("Horizontal");
         float zMove = Input.GetAxisRaw("Vertical");
 
-        rb.velocity = (transform.right * xMove + transform.forward * zMove) * speed;
+        if (Input.GetKey(KeyCode.LeftShift) || Gamepad.current?.buttonWest.isPressed == true)
+        {
+            rb.velocity = (transform.right * xMove + transform.forward * zMove) * crouchSpeed;
+        }
+        else
+        {
+            rb.velocity = (transform.right * xMove + transform.forward * zMove) * speed;
+        }
     }
 
     private void Crouching()
     {
-        if (Input.GetKeyDown(KeyCode.LeftShift))
+        bool isCrouching = Input.GetKey(KeyCode.LeftShift) || Gamepad.current?.buttonWest.isPressed == true;
+        if (isCrouching)
         {
             transform.gameObject.tag = "HiddenPlayer";
-            speed = 3f;
-            Debug.Log("ShiftKey is Down");
+            speed = crouchSpeed;
         }
-
-        if (Input.GetKeyUp(KeyCode.LeftShift))
+        else
         {
             transform.gameObject.tag = "Player";
-            speed = 5f;
-            Debug.Log("ShiftKey is Up");
+            speed = normalSpeed;
+        }
+    }
+
+    private void SpeedBoost()
+    {
+        if (boosted)
+        {
+            speed = boostSpeed;
+        }
+        else
+        {
+            speed = normalSpeed;
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("BoostObject"))
+        {
+            boosted = true;
+        }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("BoostObject"))
+        {
+            boosted = false;
         }
     }
 

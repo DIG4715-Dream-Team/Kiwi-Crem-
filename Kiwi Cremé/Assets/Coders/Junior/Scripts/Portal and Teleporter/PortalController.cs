@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PortalController : MonoBehaviour
 {
@@ -26,6 +27,9 @@ public class PortalController : MonoBehaviour
 
     float timer = 5f;
 
+    private InputAction entryAction;
+    private InputAction exitAction;
+
     private void Start()
     {
         PlayerC = Player.GetComponent<PlayerController>();
@@ -39,9 +43,18 @@ public class PortalController : MonoBehaviour
         PortalLocation();
     }
 
+    private void Awake()
+    {
+        entryAction = new InputAction("Entry", InputActionType.Button, "<Gamepad>/leftTrigger");
+        exitAction = new InputAction("Exit", InputActionType.Button, "<Gamepad>/rightTrigger");
+
+        entryAction.Enable();
+        exitAction.Enable();
+    }
+
     private void PortalLocation()
     {
-        if (Input.GetMouseButtonDown(0) && PlayerC.EnPearls > 0)
+        if ((Input.GetMouseButtonDown(0) || Gamepad.current.leftTrigger.wasPressedThisFrame) && PlayerC.EnPearls > 0)
         {
             Ray ray = Cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
             RaycastHit hit;
@@ -69,7 +82,7 @@ public class PortalController : MonoBehaviour
             }
         }
 
-        if (Input.GetMouseButtonDown(1) && PlayerC.ExPearls > 0)
+        if ((Input.GetMouseButtonDown(1) || Gamepad.current.rightTrigger.wasPressedThisFrame) && PlayerC.ExPearls > 0)
         {
             Ray ray = Cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
             RaycastHit hit;
