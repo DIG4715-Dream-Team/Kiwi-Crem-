@@ -4,44 +4,42 @@ using UnityEngine.SceneManagement;
 
 public class ButtonManager : MonoBehaviour
 {
-    [SerializeField]
-    private TextMeshProUGUI middleText;
+    [SerializeField] private TextMeshProUGUI middleText;
     public TextMeshProUGUI MiddleText { get; private set; }
-    [SerializeField]
-    public string currentScene { get; private set; }
-    [SerializeField]
-    public Scene activeScene { get; private set; }
+    [SerializeField] public string currentScene { get; private set; }
+    [SerializeField] public Scene activeScene { get; private set; }
     private bool isPaused;
 
-    [SerializeField]
-    private GameObject mainMenu;
-    [HideInInspector]
-    public bool inMainMenu;
-    [SerializeField]
-    private GameObject aboutMenu;
+    [SerializeField] private GameObject mainMenu;
+    [HideInInspector] public bool inMainMenu;
+    [SerializeField] private GameObject aboutMenu;
     private bool inAboutMenu;
     [SerializeField]
     private GameObject controlMenu;
     private bool inControlMenu;
-    [SerializeField]
-    private GameObject creditMenu;
+    [SerializeField] private GameObject creditMenu;
     private bool inCreditMenu;
-    [SerializeField]
-    private GameObject pauseMenu;
+    [SerializeField] private GameObject pauseMenu;
     private bool inPauseMenu;
-    [SerializeField]
-    private GameObject endMenu;
+    [SerializeField] private GameObject endMenu;
     public GameObject EndMenu { get; private set; }
 
     private GameObject player;
     private PlayerController Player;
+
+    [SerializeField] private GameObject crosshair;
+
+    private void Awake()
+    {
+        SceneCheck();
+    }
 
     void Start()
     {
         EndMenu = endMenu;
         MiddleText = middleText;
         SceneCheck();
-        if (currentScene != "Tiny_Shell_MainMenu")
+        if (currentScene != "MainMenu")
         {
             player = GameObject.FindGameObjectWithTag("Player");
             Player = player.GetComponent<PlayerController>();
@@ -56,10 +54,11 @@ public class ButtonManager : MonoBehaviour
 
     private void HUDPreset()
     {
-        if (currentScene == "Tiny_Shell_MainMenu")
+        if (currentScene == "MainMenu")
         {
-            MiddleText.text = "Place Holder";
+            MiddleText.text = "Place Holder (ButtonManager/HUDPreset())";
             mainMenu.SetActive(true);
+            crosshair.SetActive(false);
             aboutMenu.SetActive(false);
             controlMenu.SetActive(false);
             creditMenu.SetActive(false);
@@ -81,7 +80,7 @@ public class ButtonManager : MonoBehaviour
     {
         activeScene = SceneManager.GetActiveScene();
         currentScene = activeScene.name;
-        if (currentScene == "Tiny_Shell_MainMenu")
+        if (currentScene == "MainMenu")
         {
             inMainMenu = true;
         }
@@ -89,15 +88,16 @@ public class ButtonManager : MonoBehaviour
 
     private void PauseLogic()
     {
-        if (currentScene != "Tiny_Shell_MainMenu")
+        if (currentScene != "MainMenu")
         {
             if (Player.GameOver == false)
             {
-                if (currentScene != "Tiny_Beach_MainMenu" && Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P))
+                if (currentScene != "MainMenu" && Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P))
                 {
                     Time.timeScale = 0;
                     isPaused = true;
                     Cursor.lockState = CursorLockMode.None;
+                    crosshair.SetActive(false);
                 }
 
                 if (isPaused == true & inPauseMenu == false)
@@ -110,6 +110,7 @@ public class ButtonManager : MonoBehaviour
                 if (Time.timeScale == 1)
                 {
                     pauseMenu.SetActive(false);
+                    crosshair.SetActive(true);
                     inPauseMenu = false;
                     MiddleText.text = "";
                     Cursor.lockState = CursorLockMode.Locked;
@@ -122,7 +123,6 @@ public class ButtonManager : MonoBehaviour
     {
         Time.timeScale = 1;
         PauseLogic();
-        MiddleText.text = "";
     }
 
     private void CheckActivity()
@@ -169,7 +169,7 @@ public class ButtonManager : MonoBehaviour
         pauseMenu.SetActive(false);
         aboutMenu.SetActive(false);
         CheckActivity();
-        MiddleText.text = "Credit\nCameron Welsh - Art | Pablo Sarria - Tech | Junior Rojas - Code\n";
+        MiddleText.text = "Credit\n Artists\n Emily Bailey\n Cameron Welsh\n Coders\n David Metellus\n Junior Rojas Vasquez\n Techs\n Cameron Anderson\n Pablo Sarria\n";
     }
 
     public void Back()

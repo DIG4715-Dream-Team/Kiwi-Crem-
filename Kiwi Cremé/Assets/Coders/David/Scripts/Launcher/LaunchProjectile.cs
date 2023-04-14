@@ -6,25 +6,28 @@ public class LaunchProjectile : MonoBehaviour
 {
     public GameObject Projectile;
     public float launchVelocity = 700f;
-    
+
     private float time = 0.0f;
     public float interpolationPeriod = 0.1f;
 
     public AudioSource audioSource;
-    public AudioClip Fireball_Sound;
+    public AudioClip FireBall_Sound;
 
     void Update()
     {
         time += Time.deltaTime;
- 
-        if (time >= interpolationPeriod) 
+
+        if (time >= interpolationPeriod)
         {
             time = time - interpolationPeriod;
 
             GameObject ball = Instantiate(Projectile, transform.position, transform.rotation);
-            ball.GetComponent<Rigidbody>().AddRelativeForce(new Vector3(0, launchVelocity,0));
+            Rigidbody rb = ball.GetComponent<Rigidbody>();
+            rb.AddRelativeForce(Vector3.forward * launchVelocity, ForceMode.Impulse);
 
-            source.PlayOneShot(FireBall_Sound);
+            audioSource.PlayOneShot(FireBall_Sound);
+
+            ball.tag = "Projectile";
 
             Destroy(ball, 4f);
         }

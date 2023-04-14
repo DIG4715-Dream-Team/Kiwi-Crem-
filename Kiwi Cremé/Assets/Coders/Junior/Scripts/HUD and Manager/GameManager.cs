@@ -4,15 +4,14 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField]
-    private TextMeshProUGUI Health;
-    [SerializeField]
-    private TextMeshProUGUI Timer;
+    [SerializeField] private TextMeshProUGUI Health;
+    [SerializeField] private TextMeshProUGUI Timer;
     private float timeLeft;
-    [SerializeField]
-    private TextMeshProUGUI EnPearlInfo;
-    [SerializeField]
-    private TextMeshProUGUI ExPearlInfo;
+    private float statusTime;
+    [SerializeField] private TextMeshProUGUI EnPearlInfo;
+    [SerializeField] private TextMeshProUGUI ExPearlInfo;
+    [SerializeField] private TextMeshProUGUI statusText;
+    public TextMeshProUGUI StatusText { get; private set; }
 
     private GameObject player;
     private PlayerController Player;
@@ -20,15 +19,19 @@ public class GameManager : MonoBehaviour
     private GameObject buttonManager;
     private ButtonManager ButtonManager;
 
+    private bool StartTimer = false;
+
     void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
         timeLeft = 90;
+        statusTime = 5;
         buttonManager = GameObject.FindGameObjectWithTag("ButtonManager");
         ButtonManager = buttonManager.GetComponent<ButtonManager>();
+        StatusText = statusText;
         SceneCheck();
-        if (ButtonManager.currentScene != "Tiny_Shell_MainMenu")
+        if (ButtonManager.currentScene != "MainMenu")
         {
+            Cursor.lockState = CursorLockMode.Locked;
             player = GameObject.FindGameObjectWithTag("Player");
             Player = player.GetComponent<PlayerController>();
         }
@@ -37,17 +40,17 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if (ButtonManager.currentScene != "Tiny_Shell_MainMenu")
+        if (ButtonManager.currentScene != "MainMenu")
         {
             GameFinishedLogic();
             UpdateHUDElements();
-            UpdatePearAmount();
+            UpdatePearlAmount();
         }
     }
 
     private void FixedUpdate()
     {
-        if (ButtonManager.currentScene != "Tiny_Shell_MainMenu")
+        if (ButtonManager.currentScene != "MainMenu")
         {
             Timers();
         }
@@ -55,7 +58,7 @@ public class GameManager : MonoBehaviour
 
     private void SceneCheck()
     {
-        if (ButtonManager.currentScene == "Tiny_Shell_MainMenu")
+        if (ButtonManager.currentScene == "MainMenu")
         {
             ButtonManager.inMainMenu = true;
         }
@@ -64,6 +67,16 @@ public class GameManager : MonoBehaviour
     private void Timers()
     {
         timeLeft = timeLeft -= Time.deltaTime;
+        if (StartTimer == true)
+        {
+            statusTime = statusTime -= Time.deltaTime;
+            if (statusTime <= 0.1f)
+            {
+                StatusText.text = "";
+                StartTimer = false;
+                statusTime = 5;
+            }
+        }
     }
 
     private void UpdateHUDElements()
@@ -72,13 +85,13 @@ public class GameManager : MonoBehaviour
         Timer.text = $"Time Left:{timeLeft.ToString("F1")}";
     }
 
-    private void UpdatePearAmount()
+    private void UpdatePearlAmount()
     {
-            EnPearlInfo.text = $"Entry Portal Pearls:{Player.EnPearls}";
-            ExPearlInfo.text = $"Exit Portal Pearls:{Player.ExPearls}";
+        EnPearlInfo.text = $"Entry Pearls:{Player.EnPearls}";
+        ExPearlInfo.text = $"Exit Pearls:{Player.ExPearls}";
     }
 
-    public void GameFinishedLogic()
+    private void GameFinishedLogic()
     {
         if (Player.Died == true)
         {
@@ -100,6 +113,21 @@ public class GameManager : MonoBehaviour
             ButtonManager.EndMenu.SetActive(true);
             ButtonManager.MiddleText.text = "You failed to complete the objective in time!";
             Cursor.lockState = CursorLockMode.None;
+        }
+    }
+
+    public void Status(string condition)
+    {
+        if (condition == "Entry Portal")
+        {
+            StatusText.text = "You do not have an entry pearl";
+            StartTimer = true;
+        }
+
+        if (condition == "Exit Portal")
+        {
+            StatusText.text = "You do not have an exit pearl";
+            StartTimer = true;
         }
     }
 }
