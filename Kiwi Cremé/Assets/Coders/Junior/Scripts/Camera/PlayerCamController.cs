@@ -1,16 +1,33 @@
-using System.Collections;
 using UnityEngine;
-//using UnityEngine.InputSystem;
+using UnityEngine.InputSystem;
 
 public class PlayerCamController : MonoBehaviour
 {
-    public float sensitivityX = 2;
-    public float sensitivityY = 2;
+    public float sensitivityX = 1.0f;
+    public float sensitivityY = 1.0f;
     float rotationY;
     float rotationX;
 
-    [SerializeField]
-    private GameObject player;
+    private InputAction cameraGamepadAction;
+    private InputAction cameraMouseAction;
+
+    private const float GAMEPAD_MAX_VALUE = 1;
+
+
+    private void OnEnable()
+    {
+        cameraGamepadAction = new InputAction("CameraGamepad", InputActionType.Value, "<Gamepad>/rightStick");
+        cameraGamepadAction.Enable();
+
+        cameraMouseAction = new InputAction("CameraMouse", InputActionType.Value, "<Mouse>/delta");
+        cameraMouseAction.Enable();
+    }
+
+    private void OnDisable()
+    {
+        cameraGamepadAction.Disable();
+        cameraMouseAction.Disable();
+    }
 
     void FixedUpdate()
     {
@@ -19,11 +36,14 @@ public class PlayerCamController : MonoBehaviour
 
     private void MouseLook()
     {
-        // Get the mouse input
-        //float mouseX = Mouse.current.delta.x.ReadValue()*Time.smoothDeltaTime * sensitivityX;
-        //float mouseY = Mouse.current.delta.y.ReadValue()* Time.smoothDeltaTime * sensitivityY;
-        float mouseX = Input.GetAxis("Mouse X") * sensitivityX;
-        float mouseY = Input.GetAxis("Mouse Y") * sensitivityY;
+        // Get the camera input from the gamepad
+        Vector2 cameraInput = cameraGamepadAction.ReadValue<Vector2>();
+
+        // Get the camera input from the mouse and add it to the gamepad input
+        cameraInput += cameraMouseAction.ReadValue<Vector2>() * sensitivityX;
+
+        float mouseX = cameraInput.x * sensitivityX;
+        float mouseY = cameraInput.y * sensitivityY;
 
         // Calculate the new camera rotation
         rotationY += mouseY;
@@ -35,7 +55,7 @@ public class PlayerCamController : MonoBehaviour
         // Apply the new rotation to the camera
         transform.localRotation = Quaternion.Euler(-rotationY, 0, 0);
 
-        // Rotate the player object around the y-axis
-        player.transform.Rotate(Vector3.up, mouseX);
+        // Rotate the parent player object around the y-axis
+        transform.parent.Rotate(Vector3.up, mouseX);
     }
 }
