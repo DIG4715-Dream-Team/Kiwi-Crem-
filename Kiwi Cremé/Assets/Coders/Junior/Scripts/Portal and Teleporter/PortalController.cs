@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PortalController : MonoBehaviour
 {
@@ -24,10 +25,15 @@ public class PortalController : MonoBehaviour
     private int entryIteration = 1;
     private int exitIteration = 1;
 
+    float timer = 5f;
+
+    private InputAction entryAction;
+    private InputAction exitAction;
+
     private void Start()
     {
         PlayerC = Player.GetComponent<PlayerController>();
-        gameManager = GameObject.FindGameObjectWithTag("GameManager");
+        gameManager = GameObject.FindGameObjectWithTag("ButtonManager");
         GameManager = gameManager.GetComponent<GameManager>();
         EntryPad = GameObject.FindGameObjectsWithTag("EntryPad");
         ExitPad = GameObject.FindGameObjectsWithTag("ExitPad");
@@ -37,9 +43,18 @@ public class PortalController : MonoBehaviour
         PortalLocation();
     }
 
+    private void Awake()
+    {
+        entryAction = new InputAction("Entry", InputActionType.Button, "<Gamepad>/leftTrigger");
+        exitAction = new InputAction("Exit", InputActionType.Button, "<Gamepad>/rightTrigger");
+
+        entryAction.Enable();
+        exitAction.Enable();
+    }
+
     private void PortalLocation()
     {
-        if (Input.GetMouseButtonDown(0))
+        if ((Input.GetMouseButtonDown(0) || Gamepad.current.leftTrigger.wasPressedThisFrame) && PlayerC.EnPearls > 0)
         {
             Ray ray = Cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
             RaycastHit hit;
@@ -63,11 +78,11 @@ public class PortalController : MonoBehaviour
             }
             else if (Physics.Raycast(ray, out hit) && PlayerC.EnPearls == 0 && hit.transform.tag == "EntryPad")
             {
-                gameManager.GetComponent<GameManager>().Status("Entry Portal");
+                GameManager.Status("Entry Portal");
             }
         }
 
-        if (Input.GetMouseButtonDown(1))
+        if ((Input.GetMouseButtonDown(1) || Gamepad.current.rightTrigger.wasPressedThisFrame) && PlayerC.ExPearls > 0)
         {
             Ray ray = Cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
             RaycastHit hit;
