@@ -5,6 +5,8 @@ public class PlayerCamController : MonoBehaviour
 {
     public float sensitivityX = 1.0f;
     public float sensitivityY = 1.0f;
+    public float mouseSensitivity = 1.0f;
+    public float gamepadSensitivity = 1.0f;
     float rotationY;
     float rotationX;
 
@@ -40,14 +42,14 @@ public class PlayerCamController : MonoBehaviour
         Vector2 cameraInput = cameraGamepadAction.ReadValue<Vector2>();
 
         // Get the camera input from the mouse and add it to the gamepad input
-        cameraInput += cameraMouseAction.ReadValue<Vector2>() * sensitivityX;
+        cameraInput += cameraMouseAction.ReadValue<Vector2>() * mouseSensitivity;
 
-        float mouseX = cameraInput.x * sensitivityX;
-        float mouseY = cameraInput.y * sensitivityY;
+        float mouseX = cameraInput.x;
+        float mouseY = cameraInput.y;
 
         // Calculate the new camera rotation
-        rotationY += mouseY;
-        rotationX += mouseX;
+        rotationY += mouseY * gamepadSensitivity;
+        rotationX += mouseX * gamepadSensitivity;
 
         // Clamp the rotation values
         rotationY = Mathf.Clamp(rotationY, -45, 45);
