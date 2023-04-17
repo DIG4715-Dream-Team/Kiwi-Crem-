@@ -35,6 +35,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 602717031911150025}
+  - {fileID: 3459953477403534840}
   m_Father: {fileID: 602717031901938372}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -132,11 +133,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28353e8be00c5c74cb5e7730ccde9b51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 602717030185709713}
+  shieldSpawn: {fileID: 3459953477403534840}
   cam: {fileID: 602717031911150025}
-  spawnDistance: 3
+  spawnDistance: 2
   Deflector: {fileID: 4751864965153421380, guid: a610f3d1183aa894f88499ead393ff19, type: 3}
-  cooldown: 5
+  cooldown: 3
   canspawn: 1
 --- !u!64 &3487952819254655212
 MeshCollider:
@@ -368,3 +369,34 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
+--- !u!1 &893754796093470080
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3459953477403534840}
+  m_Layer: 0
+  m_Name: ShieldSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3459953477403534840
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 893754796093470080}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.0849, y: -0.035163242, z: -0.35186005}
+  m_LocalScale: {x: 0.5, y: 0.50000006, z: 0.5}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 602717030185709713}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
