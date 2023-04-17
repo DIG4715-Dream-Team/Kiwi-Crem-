@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748171, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1129,7 +1129,7 @@ GameObject:
   - component: {fileID: 1240869504}
   m_Layer: 0
   m_Name: Projectile Spawn
-  m_TagString: Untagged
+  m_TagString: Angel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1257,8 +1257,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b222a74bb5d71a04c8785146949a3a6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Projectile: {fileID: 3657865416821753981, guid: f654901f92c32724792d0f41a67e685d, type: 3}
-  launchVelocity: 15
+  Projectile: {fileID: 3657865416821753981, guid: ffd5f558c44a8424aac3634a6cc58f7f, type: 3}
+  launchVelocity: 25
   audioSource: {fileID: 1240869504}
   FireBall_Sound: {fileID: 8300000, guid: 745254285582ca14b94c5af875c21a49, type: 3}
 --- !u!1001 &1250296275
@@ -2744,6 +2744,19 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 60
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &744858588397630191
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 188327242}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 17.48339, y: 14.22514, z: 1}
+  m_Center: {x: -0.42347193, y: 1.4642544, z: 0}
 --- !u!4 &1216997969695468347
 Transform:
   m_ObjectHideFlags: 0
@@ -2772,7 +2785,7 @@ GameObject:
   - component: {fileID: 1216997969695468347}
   m_Layer: 0
   m_Name: -Angel
-  m_TagString: Untagged
+  m_TagString: Angel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2840,9 +2853,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -5539764629200458662, guid: bbb444c588a8da14283ae03219173cf4, type: 3}
+      propertyPath: m_TagString
+      value: Angel
+      objectReference: {fileID: 0}
     - target: {fileID: -3600779313080499974, guid: bbb444c588a8da14283ae03219173cf4, type: 3}
       propertyPath: m_LocalPosition.y
       value: 3.4220355
+      objectReference: {fileID: 0}
+    - target: {fileID: -1500838157198093432, guid: bbb444c588a8da14283ae03219173cf4, type: 3}
+      propertyPath: m_TagString
+      value: Angel
       objectReference: {fileID: 0}
     - target: {fileID: 592664080621265513, guid: bbb444c588a8da14283ae03219173cf4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2856,9 +2877,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: Angel_Model_basic
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: bbb444c588a8da14283ae03219173cf4, type: 3}
+      propertyPath: m_TagString
+      value: Angel
+      objectReference: {fileID: 0}
     - target: {fileID: 1366278540751589237, guid: bbb444c588a8da14283ae03219173cf4, type: 3}
       propertyPath: m_LocalPosition.y
       value: -4.5913725
+      objectReference: {fileID: 0}
+    - target: {fileID: 2501130478890122924, guid: bbb444c588a8da14283ae03219173cf4, type: 3}
+      propertyPath: m_TagString
+      value: Angel
+      objectReference: {fileID: 0}
+    - target: {fileID: 2866621852552652557, guid: bbb444c588a8da14283ae03219173cf4, type: 3}
+      propertyPath: m_TagString
+      value: Angel
+      objectReference: {fileID: 0}
+    - target: {fileID: 3779745573541866595, guid: bbb444c588a8da14283ae03219173cf4, type: 3}
+      propertyPath: m_TagString
+      value: Angel
       objectReference: {fileID: 0}
     - target: {fileID: 4518980002003577502, guid: bbb444c588a8da14283ae03219173cf4, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2951,7 +2988,7 @@ GameObject:
   - component: {fileID: 5837415042306061902}
   m_Layer: 0
   m_Name: CenterPoint
-  m_TagString: Untagged
+  m_TagString: Angel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

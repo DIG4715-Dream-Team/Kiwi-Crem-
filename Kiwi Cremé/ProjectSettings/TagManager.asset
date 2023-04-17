@@ -20,6 +20,7 @@ TagManager:
   - BoostObject
   - GameManager
   - Shield
+  - Angel
   layers:
   - Default
   - TransparentFX
