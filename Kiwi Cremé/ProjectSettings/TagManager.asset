@@ -23,6 +23,7 @@ TagManager:
   - HellPortal
   - HeavenPortal
   - PurgatoryPortal
+  - Angel
   layers:
   - Default
   - TransparentFX
