@@ -136,7 +136,7 @@ MonoBehaviour:
   cam: {fileID: 602717031911150025}
   spawnDistance: 3
   Deflector: {fileID: 4751864965153421380, guid: a610f3d1183aa894f88499ead393ff19, type: 3}
-  cooldown: 5
+  cooldown: 3
   canspawn: 1
 --- !u!64 &3487952819254655212
 MeshCollider:

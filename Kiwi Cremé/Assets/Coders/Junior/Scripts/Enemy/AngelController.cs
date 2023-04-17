@@ -11,6 +11,10 @@ public class AngelController : MonoBehaviour
     private GameObject player;
     private PlayerController Player;
 
+    [SerializeField] private float ProjectileTimer;
+
+    private bool Fired = false;
+    private bool startTimer = false;
 
     void Start()
     {
@@ -20,7 +24,21 @@ public class AngelController : MonoBehaviour
 
     void Update()
     {
-        
+        if (trackingPlayer == true)
+        {
+            transform.LookAt(player.transform.position);
+            agent.SetDestination(player.transform.position);
+            if (Player.CompareTag("HiddenPlayer"))
+            {
+                trackingPlayer = false;
+            }
+        }
+        else if (trackingPlayer == false)
+        {
+            Patrolling();
+        }
+
+        Timer();
     }
 
     private void Patrolling()
@@ -57,8 +75,9 @@ public class AngelController : MonoBehaviour
             Debug.DrawLine(transform.position, Player.transform.position, Color.magenta, 5.0f);
             Debug.DrawRay(Player.transform.position, Vector3.up, Color.magenta, 5.0f);
             trackingPlayer = true;
-            //transform.parent.gameObject.transform.LookAt(other.transform);
-            transform.rotation = Quaternion.Euler(other.transform.position.x, other.transform.position.y, 0f);
+            transform.GetChild(5).GetComponent<AngelProjectileController>().FireProjectile();
+            Fired = true;
+            ProjectileTimer = 5f;
         }
     }
 
@@ -67,6 +86,26 @@ public class AngelController : MonoBehaviour
         if (other != null && other.gameObject.CompareTag("Player"))
         {
             trackingPlayer = false;
+        }
+    }
+
+    private void Timer()
+    {
+        if (Fired == true)
+        {
+            Fired = false;
+            startTimer = true;
+        }
+
+        if (startTimer == true)
+        {
+            ProjectileTimer = ProjectileTimer -= Time.deltaTime;
+            if (ProjectileTimer <= 0.1f)
+            {
+                transform.GetChild(5).GetComponent<AngelProjectileController>().FireProjectile();
+                Fired = true;
+                ProjectileTimer = 5f;
+            }
         }
     }
 }

@@ -19,6 +19,7 @@ TagManager:
   - Deflector
   - BoostObject
   - GameManager
+  - Shield
   layers:
   - Default
   - TransparentFX
