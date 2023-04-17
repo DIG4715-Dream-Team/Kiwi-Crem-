@@ -4,7 +4,6 @@ using UnityEngine.InputSystem;
 
 public class Shield : MonoBehaviour
 {
-    [SerializeField] private Transform player;
     [SerializeField] private Transform shieldSpawn;
     [SerializeField] private Transform cam;
     [SerializeField] private float spawnDistance = 3f;
