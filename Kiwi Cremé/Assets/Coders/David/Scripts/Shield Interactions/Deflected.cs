@@ -6,6 +6,8 @@ public class Deflected : MonoBehaviour
     private GameObject player;
     private PlayerController Player;
 
+    public bool colliding = false;
+
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -28,6 +30,11 @@ public class Deflected : MonoBehaviour
         if (collision.gameObject.CompareTag("Obstacles"))
         {
             Destroy(gameObject);
+        }
+
+        if (collision.gameObject.CompareTag("Shield"))
+        {
+            colliding = true;
         }
     }
 }
