@@ -10,10 +10,13 @@ public class Deflected : MonoBehaviour
 
     public bool Colliding { get => colliding; set => colliding = value; }
 
-    void Start()
+    void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        Player = player.GetComponent<PlayerController>();
+        if (player != null)
+        {
+            Player = player.GetComponent<PlayerController>();
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
