@@ -20,7 +20,9 @@ TagManager:
   - BoostObject
   - GameManager
   - Shield
-  - Angel
+  - HellPortal
+  - HeavenPortal
+  - PurgatoryPortal
   layers:
   - Default
   - TransparentFX

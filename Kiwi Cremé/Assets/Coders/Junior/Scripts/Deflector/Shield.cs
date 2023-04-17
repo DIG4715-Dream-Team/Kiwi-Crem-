@@ -21,7 +21,7 @@ public class Shield : MonoBehaviour
     }
     void Update()
     {
-        transform.GetChild(1).transform.rotation = Quaternion.Euler(cam.transform.localEulerAngles.x, 0f, 0f);
+        transform.GetChild(1).transform.rotation = Quaternion.Euler(cam.transform.localEulerAngles.x, transform.localEulerAngles.y, 0f);
 
         if (canspawn == true && (Gamepad.current != null && Gamepad.current.enabled && spawnShieldAction.triggered || Input.GetKeyDown(KeyCode.E)))
         {
@@ -36,7 +36,6 @@ public class Shield : MonoBehaviour
 
     void SpawnShield()
     {
-        transform.GetChild(1).transform.rotation = Quaternion.Euler(cam.transform.localEulerAngles.x, 0f, 0f);
         Instantiate(Deflector, shieldSpawn.position + shieldSpawn.forward * spawnDistance, cam.rotation);
         canspawn = false;
 
