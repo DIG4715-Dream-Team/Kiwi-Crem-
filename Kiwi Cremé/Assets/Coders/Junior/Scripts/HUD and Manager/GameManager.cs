@@ -36,6 +36,7 @@ public class GameManager : MonoBehaviour
             Player = player.GetComponent<PlayerController>();
             Transform spawnPoint = GameObject.FindGameObjectWithTag("Respawn").transform;
             Player.transform.position = spawnPoint.position;
+            Player.transform.forward = spawnPoint.transform.forward;
         }
         Time.timeScale = 1;
     }
