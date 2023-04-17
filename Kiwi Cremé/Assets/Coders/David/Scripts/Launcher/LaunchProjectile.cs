@@ -29,7 +29,14 @@ public class LaunchProjectile : MonoBehaviour
 
             ball.tag = "Projectile";
 
-            Destroy(ball, 4f);
+            if (ball.GetComponent<Deflected>().Colliding == false)
+            {
+                Destroy(ball, 5f);
+            }
+            else if (ball.GetComponent<Deflected>().Colliding == true)
+            {
+                Destroy(ball, 5f);
+            }
         }
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 
 public class Shield : MonoBehaviour
 {
-    [SerializeField] private Transform player;
+    [SerializeField] private Transform shieldSpawn;
     [SerializeField] private Transform cam;
     [SerializeField] private float spawnDistance = 3f;
     [SerializeField] private GameObject Deflector;
@@ -21,8 +21,9 @@ public class Shield : MonoBehaviour
     }
     void Update()
     {
-        if (canspawn == true && (Gamepad.current != null && Gamepad.current.enabled && spawnShieldAction.triggered ||
-        Input.GetKeyDown(KeyCode.E)))
+        transform.GetChild(1).transform.rotation = Quaternion.Euler(cam.transform.localEulerAngles.x, transform.localEulerAngles.y, 0f);
+
+        if (canspawn == true && (Gamepad.current != null && Gamepad.current.enabled && spawnShieldAction.triggered || Input.GetKeyDown(KeyCode.E)))
         {
             SpawnShield();
         }
@@ -35,7 +36,7 @@ public class Shield : MonoBehaviour
 
     void SpawnShield()
     {
-        Instantiate(Deflector, player.position + player.forward * spawnDistance, cam.rotation);
+        Instantiate(Deflector, shieldSpawn.position + shieldSpawn.forward * spawnDistance, cam.rotation);
         canspawn = false;
 
         if (Gamepad.current != null && Gamepad.current.enabled)
