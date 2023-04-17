@@ -52,7 +52,7 @@ public class PlayerCamController : MonoBehaviour
         rotationX += mouseX * gamepadSensitivity;
 
         // Clamp the rotation values
-        rotationY = Mathf.Clamp(rotationY, -45, 45);
+        rotationY = Mathf.Clamp(rotationY, -45, 90);
 
         // Apply the new rotation to the camera
         transform.localRotation = Quaternion.Euler(-rotationY, 0, 0);
