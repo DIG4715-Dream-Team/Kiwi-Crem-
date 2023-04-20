@@ -179,7 +179,7 @@ public class ButtonManager : MonoBehaviour
         pauseMenu.SetActive(false);
         aboutMenu.SetActive(false);
         CheckActivity();
-        MiddleText.text = "Controls\nW,A,S, and D to move\nE to activate temporary shield";
+        MiddleText.text = "Controls\nW,A,S, and D or the left stick on Xbox to move\nE or A on Xbox to activate temporary shield\nHold LeftShift or X button on Xbox to crouch";
     }
 
     public void Credit()
