@@ -6,12 +6,17 @@ public class Deflected : MonoBehaviour
     private GameObject player;
     private PlayerController Player;
 
-    public bool colliding = false;
+    private bool colliding = false;
 
-    void Start()
+    public bool Colliding { get => colliding; set => colliding = value; }
+
+    void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        Player = player.GetComponent<PlayerController>();
+        if (player != null)
+        {
+            Player = player.GetComponent<PlayerController>();
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -27,6 +32,13 @@ public class Deflected : MonoBehaviour
             Destroy(gameObject);
         }
 
+        if (collision.gameObject.CompareTag("Angel"))
+        {
+            // Deactivate all scripts and components on the target object
+            collision.gameObject.SetActive(false);
+            Destroy(gameObject);
+        }
+
         if (collision.gameObject.CompareTag("Obstacles"))
         {
             Destroy(gameObject);
@@ -34,7 +46,7 @@ public class Deflected : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Shield"))
         {
-            colliding = true;
+            Colliding = true;
         }
     }
 }
