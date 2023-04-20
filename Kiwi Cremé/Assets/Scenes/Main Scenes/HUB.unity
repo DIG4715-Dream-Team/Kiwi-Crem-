@@ -142,10 +142,6 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 150
       objectReference: {fileID: 0}
-    - target: {fileID: 5165532762362661101, guid: e4d2f35dbe2e2c3409bfa9a9c9dfac00, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 0f340d01995157f47a1e2e7ea75adc45, type: 3}
     - target: {fileID: 5165532762548458718, guid: e4d2f35dbe2e2c3409bfa9a9c9dfac00, type: 3}
       propertyPath: m_Name
       value: -HUD
