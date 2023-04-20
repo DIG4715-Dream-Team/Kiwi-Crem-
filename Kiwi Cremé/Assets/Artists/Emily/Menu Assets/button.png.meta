@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9b407693c7c6fc140ad6f13e49f4146f
+guid: 3b2eaa05209543b4bbd81b6e96fcb885
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -45,14 +45,19 @@ TextureImporter:
   spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 0
-  spritePivot: {x: 0.5, y: 0.5}
+  alignment: 9
+<<<<<<< Updated upstream:Kiwi Cremé/Assets/Artists/Emily/Menu Assets/Button components/button.png.meta
+  spritePivot: {x: 1, y: 1}
   spritePixelsToUnits: 100
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+=======
+  spritePivot: {x: 0.50000006, y: 0.5676708}
+  spritePixelsToUnits: 9999
+>>>>>>> Stashed changes:Kiwi Cremé/Assets/Artists/Emily/Menu Assets/button.png.meta
+  spriteBorder: {x: 557, y: 1969, z: 478, w: 1419}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
-  spriteTessellationDetail: -1
+  spriteTessellationDetail: 0
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
@@ -103,11 +108,15 @@ TextureImporter:
   spriteSheet:
     serializedVersion: 2
     sprites: []
-    outline: []
+    outline:
+    - - {x: -934, y: -4}
+      - {x: -891, y: 564}
+      - {x: 995, y: 572}
+      - {x: 1013, y: -22}
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
-    internalID: 0
+    internalID: 1537655665
     vertices: []
     indices: 
     edges: []
