@@ -46,12 +46,8 @@ TextureImporter:
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 9
-<<<<<<< HEAD:Kiwi Cremé/Assets/Artists/Emily/Menu Assets/button.png.meta
 <<<<<<< Updated upstream:Kiwi Cremé/Assets/Artists/Emily/Menu Assets/Button components/button.png.meta
   spritePivot: {x: 1, y: 1}
-=======
-  spritePivot: {x: 0.50000006, y: 0.5676708}
->>>>>>> parent of 206a070 (HUD Changes (#295)):Kiwi Cremé/Assets/Artists/Emily/Menu Assets/Button components/button.png.meta
   spritePixelsToUnits: 100
 =======
   spritePivot: {x: 0.50000006, y: 0.5676708}
