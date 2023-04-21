@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8215702178044586067}
   - component: {fileID: 5020337173259298806}
   - component: {fileID: 7083921723650724668}
+  - component: {fileID: 5158057594039438702}
   m_Layer: 0
   m_Name: Stalagmite_Thick
   m_TagString: Untagged
@@ -83,3 +84,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &5158057594039438702
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8741444230728151785}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -8293125095256066884, guid: c2de7db7b7166904491be6db2776b7be, type: 3}
