@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
-
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -15,11 +15,16 @@ public class PlayerController : MonoBehaviour
     Rigidbody rb;
 
     public bool Died { get; private set; }
+    public bool HellObjective { get; private set; }
+    public bool PurgatoryObjective { get; private set; }
+    public bool HeavenObjective { get; private set; }
     public bool CompletedObjectives { get; private set; }
     public int Health { get; private set; }
     public bool GameOver { get; private set; }
 
     public bool hasHellPearl { get; private set; }
+    public bool hasHeavenPearl { get; private set; }
+    public bool hasPurgatoryPearl { get; private set; }
     public int EnPearls { get; private set; }
     public int ExPearls { get; private set; }
 
@@ -115,11 +120,39 @@ public class PlayerController : MonoBehaviour
         {
             hasHellPearl = true;
         }
+
+        if (level == "Heaven")
+        {
+            hasHeavenPearl = true;
+        }
+
+        if (level == "Purgatory")
+        {
+            hasPurgatoryPearl = true;
+        }
     }
 
     public void UpdateObjective(string level)
     {
         if (level == "Hell")
+        {
+            HellObjective = true;
+            SceneManager.LoadScene("HUB");
+        }
+
+        if (level == "Heaven")
+        {
+            HeavenObjective = true;
+            SceneManager.LoadScene("HUB");
+        }
+
+        if (level == "Purgatory")
+        {
+            PurgatoryObjective = true;
+            SceneManager.LoadScene("HUB");
+        }
+
+        if (HellObjective == true && HeavenObjective == true && PurgatoryObjective ==  true)
         {
             CompletedObjectives = true;
         }

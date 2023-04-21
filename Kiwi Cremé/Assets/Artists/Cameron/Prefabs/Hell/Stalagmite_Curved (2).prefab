@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5068535534739954064}
   - component: {fileID: 8212548819411375669}
   - component: {fileID: 6204872776159945471}
+  - component: {fileID: -6619981885934656957}
   m_Layer: 0
   m_Name: Stalagmite_Curved (2)
   m_TagString: Untagged
@@ -83,3 +84,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &-6619981885934656957
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5556560795240678186}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -414511685697342561, guid: a487467422326624da8e7c48537f75be, type: 3}

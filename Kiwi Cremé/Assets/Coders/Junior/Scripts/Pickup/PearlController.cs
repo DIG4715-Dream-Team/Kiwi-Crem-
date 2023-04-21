@@ -28,7 +28,7 @@ public class PearlController : MonoBehaviour
     {
         if (other != null && other.gameObject.CompareTag("Player"))
         {
-            Player.UpdatePearl("Hell");
+            Player.UpdatePearl($"{scene}");
             Destroy(gameObject);
         }
     }
