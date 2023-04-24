@@ -34,6 +34,9 @@ public class GameManager : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked;
             player = GameObject.FindGameObjectWithTag("Player");
             Player = player.GetComponent<PlayerController>();
+            Transform spawnPoint = GameObject.FindGameObjectWithTag("Respawn").transform;
+            Player.transform.position = spawnPoint.position;
+            Player.transform.forward = spawnPoint.transform.forward;
         }
         Time.timeScale = 1;
     }
@@ -81,7 +84,7 @@ public class GameManager : MonoBehaviour
 
     private void UpdateHUDElements()
     {
-        Health.text = $"Current Health:{Player.Health}";
+        Health.text = $"Health:{Player.Health}";
         Timer.text = $"Time Left:{timeLeft.ToString("F1")}";
     }
 

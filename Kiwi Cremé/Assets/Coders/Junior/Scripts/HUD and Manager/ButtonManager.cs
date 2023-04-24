@@ -29,6 +29,8 @@ public class ButtonManager : MonoBehaviour
 
     [SerializeField] private GameObject crosshair;
 
+    public AudioSource[] sources;
+
     private void Awake()
     {
         SceneCheck();
@@ -45,6 +47,7 @@ public class ButtonManager : MonoBehaviour
             Player = player.GetComponent<PlayerController>();
         }
         HUDPreset();
+        sources = Object.FindObjectsOfType(typeof(AudioSource)) as AudioSource[];
     }
 
     void Update()
@@ -96,6 +99,16 @@ public class ButtonManager : MonoBehaviour
                 {
                     Time.timeScale = 0;
                     isPaused = true;
+                    if (Time.timeScale == 0)
+                    {
+                        foreach (AudioSource audioSource in sources)
+                        {
+                            if (audioSource.isPlaying)
+                            {
+                                audioSource.Pause();
+                            }
+                        }
+                    }
                     Cursor.lockState = CursorLockMode.None;
                     crosshair.SetActive(false);
                 }
@@ -112,6 +125,13 @@ public class ButtonManager : MonoBehaviour
                     pauseMenu.SetActive(false);
                     crosshair.SetActive(true);
                     inPauseMenu = false;
+                    if (Time.timeScale == 1)
+                    {
+                        foreach (AudioSource audioSource in sources)
+                        {
+                            audioSource.UnPause();
+                        }
+                    }
                     MiddleText.text = "";
                     Cursor.lockState = CursorLockMode.Locked;
                 }
@@ -159,7 +179,7 @@ public class ButtonManager : MonoBehaviour
         pauseMenu.SetActive(false);
         aboutMenu.SetActive(false);
         CheckActivity();
-        MiddleText.text = "Controls\nW,A,S, and D to move\nE to activate temporary shield";
+        MiddleText.text = "Controls\nW,A,S, and D or the left stick on Xbox to move\nE or A on Xbox to activate temporary shield\nHold LeftShift or X button on Xbox to crouch";
     }
 
     public void Credit()

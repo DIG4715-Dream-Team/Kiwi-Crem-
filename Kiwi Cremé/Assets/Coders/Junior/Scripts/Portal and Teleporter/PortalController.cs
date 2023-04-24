@@ -54,7 +54,7 @@ public class PortalController : MonoBehaviour
 
     private void PortalLocation()
     {
-        if ((Input.GetMouseButtonDown(0) || Gamepad.current.leftTrigger.wasPressedThisFrame) && PlayerC.EnPearls > 0)
+        if ((Input.GetMouseButtonDown(0) || (Gamepad.current != null && Gamepad.current.leftTrigger.wasPressedThisFrame)) && PlayerC.EnPearls > 0)
         {
             Ray ray = Cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
             RaycastHit hit;
@@ -71,7 +71,7 @@ public class PortalController : MonoBehaviour
                 }
                 Vector3 point = hit.point;
                 Debug.DrawRay(point, Vector3.up, Color.red, 5f);
-                Instantiate(entryPortal, point, Quaternion.Euler(0f, hit.transform.localEulerAngles.y, 0f));
+                Instantiate(entryPortal, hit.transform.position, Quaternion.Euler(0f, hit.transform.localEulerAngles.y, 0f));
                 hit.transform.gameObject.SetActive(false);
                 creatingEntry = false;
                 PlayerC.UpdatePearlAmount("Entry", -1);
@@ -82,7 +82,7 @@ public class PortalController : MonoBehaviour
             }
         }
 
-        if ((Input.GetMouseButtonDown(1) || Gamepad.current.rightTrigger.wasPressedThisFrame) && PlayerC.ExPearls > 0)
+        if ((Input.GetMouseButtonDown(1) || (Gamepad.current != null && Gamepad.current.rightTrigger.wasPressedThisFrame)) && PlayerC.ExPearls > 0)
         {
             Ray ray = Cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
             RaycastHit hit;
@@ -99,7 +99,7 @@ public class PortalController : MonoBehaviour
                 }
                 Vector3 point = hit.point;
                 Debug.DrawRay(point, Vector3.up, Color.red, 5f);
-                Instantiate(exitPortal, point, Quaternion.Euler(0f, hit.transform.localEulerAngles.y, 0f));
+                Instantiate(exitPortal, hit.transform.position, Quaternion.Euler(0f, hit.transform.localEulerAngles.y, 0f));
                 hit.transform.gameObject.SetActive(false);
                 creatingExit = false;
                 PlayerC.UpdatePearlAmount("Exit", -1);
