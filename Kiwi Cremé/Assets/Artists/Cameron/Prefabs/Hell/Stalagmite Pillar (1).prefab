@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 8236196886445097355}
   - component: {fileID: 5035872085704052270}
   - component: {fileID: 7063884689578326756}
-  - component: {fileID: 7346060242572003430}
+  - component: {fileID: -2290714582120744407}
   m_Layer: 0
   m_Name: Stalagmite Pillar (1)
   m_TagString: Untagged
@@ -168,8 +168,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &7346060242572003430
-BoxCollider:
+--- !u!64 &-2290714582120744407
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -178,6 +178,7 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.99691415, y: 0.8834481, z: 1.6686347}
-  m_Center: {x: -0.024438633, y: -0.017757602, z: 0.7325157}
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4233009878210327397, guid: 9c77218de8ee83d4da71b64d3ea08589, type: 3}
