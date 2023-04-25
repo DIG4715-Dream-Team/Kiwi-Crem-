@@ -175,7 +175,8 @@ PrefabInstance:
       propertyPath: m_NavMeshLayer
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -6133792998173719801, guid: 8b25538654af8ba4185536e2e199e7ac, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 8b25538654af8ba4185536e2e199e7ac, type: 3}
 --- !u!4 &3699101567898238574 stripped
 Transform:
@@ -200,20 +201,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2, y: 1, z: 2}
   m_Center: {x: 0, y: 0.52, z: 0}
---- !u!64 &898449816312881879
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4043680417731732692}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
 --- !u!114 &898449816312881877
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -226,3 +213,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d6d837093925bf4f8f59cfcaf87859a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &2814247730098089313
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4043680417731732692}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.38, y: 1.01, z: 0.39}
+  m_Center: {x: 0, y: 0.53, z: 0}
