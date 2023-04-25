@@ -34,7 +34,7 @@ public class HUBPortalController : MonoBehaviour
         }
         if (gameObject.tag == "HeavenPortal" && other.gameObject.CompareTag("Player"))
         {
-            SceneManager.LoadScene("Heaven");
+            SceneManager.LoadScene("Heaven Redone Version");
         }
     }
 }
