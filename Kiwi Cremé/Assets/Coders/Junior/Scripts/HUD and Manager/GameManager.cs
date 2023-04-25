@@ -84,7 +84,7 @@ public class GameManager : MonoBehaviour
 
     private void UpdateHUDElements()
     {
-        Health.text = $"Health:{Player.Health}";
+        Health.text = $"Current Health:{Player.Health}";
         Timer.text = $"Time Left:{timeLeft.ToString("F1")}";
     }
 

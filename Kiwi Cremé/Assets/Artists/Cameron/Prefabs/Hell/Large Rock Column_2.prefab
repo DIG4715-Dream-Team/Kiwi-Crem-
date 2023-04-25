@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5424726678485746106}
   - component: {fileID: 9000263232408342047}
   - component: {fileID: 6558275631835364053}
-  - component: {fileID: 4598335806009388943}
+  - component: {fileID: 9115925742571100196}
   m_Layer: 0
   m_Name: Large Rock Column_2
   m_TagString: Untagged
@@ -84,8 +84,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &4598335806009388943
-MeshCollider:
+--- !u!65 &9115925742571100196
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -94,7 +94,6 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 9198719969196592413, guid: 2a5282373e0852b48bf1cd7ebc984a81, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 1.124347, y: 1.183012, z: 1.6172674}
+  m_Center: {x: 0, y: 0.02933336, z: 0.74367446}
