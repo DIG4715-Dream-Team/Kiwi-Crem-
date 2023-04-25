@@ -53,7 +53,7 @@ public class GameManager : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (ButtonManager.currentScene != "MainMenu")
+        if (ButtonManager.currentScene != "MainMenu" && ButtonManager.currentScene != "HUB")
         {
             Timers();
         }
