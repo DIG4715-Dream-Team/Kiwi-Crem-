@@ -282,6 +282,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -85
       objectReference: {fileID: 0}
+    - target: {fileID: 5165532761674079291, guid: e4d2f35dbe2e2c3409bfa9a9c9dfac00, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5165532761952742357, guid: e4d2f35dbe2e2c3409bfa9a9c9dfac00, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0.5
@@ -312,7 +316,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5165532762362661100, guid: e4d2f35dbe2e2c3409bfa9a9c9dfac00, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: Purgatory
+      value: HUB
       objectReference: {fileID: 0}
     - target: {fileID: 5165532762362661101, guid: e4d2f35dbe2e2c3409bfa9a9c9dfac00, type: 3}
       propertyPath: m_Type
