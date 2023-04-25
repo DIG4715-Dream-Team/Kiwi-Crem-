@@ -781,6 +781,10 @@ MonoBehaviour:
   EnPearlInfo: {fileID: 5165532761952742354}
   ExPearlInfo: {fileID: 5165532761074579483}
   statusText: {fileID: 2813840935798188086}
+  healthGoop: {fileID: 7810281589426467089}
+  hudTimer: {fileID: 5165532761674079290}
+  EntryPearl: {fileID: 7684327909122007648}
+  ExitPearl: {fileID: 809312508269413572}
 --- !u!1 &5165532761074579485
 GameObject:
   m_ObjectHideFlags: 0
