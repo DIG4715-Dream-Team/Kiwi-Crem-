@@ -38,6 +38,7 @@ public class PortalController : MonoBehaviour
         EntryPad = GameObject.FindGameObjectsWithTag("EntryPad");
         ExitPad = GameObject.FindGameObjectsWithTag("ExitPad");
     }
+
     void Update()
     {
         PortalLocation();
