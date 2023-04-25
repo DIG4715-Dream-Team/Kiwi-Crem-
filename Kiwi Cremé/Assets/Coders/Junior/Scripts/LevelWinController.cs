@@ -10,16 +10,6 @@ public class LevelWinController : MonoBehaviour
             {
                 other.gameObject.GetComponent<PlayerController>().UpdateObjective("Hell");
             }
-
-            if (other.gameObject.GetComponent<PlayerController>().hasHeavenPearl == true)
-            {
-                other.gameObject.GetComponent<PlayerController>().UpdateObjective("Heaven");
-            }
-
-            if (other.gameObject.GetComponent<PlayerController>().hasPurgatoryPearl == true)
-            {
-                other.gameObject.GetComponent<PlayerController>().UpdateObjective("Purgatory");
-            }
         }
     }
 }
