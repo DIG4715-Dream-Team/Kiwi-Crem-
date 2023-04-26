@@ -5441,7 +5441,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5165532762548458719}
   m_Layer: 0
-  m_Name: -HUD
+  m_Name: -HUD Element
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
