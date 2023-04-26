@@ -11,6 +11,7 @@ public class ButtonManager : MonoBehaviour
     private bool isPaused;
 
     [SerializeField] private GameObject mainMenu;
+    [SerializeField] private GameObject background;
     [HideInInspector] public bool inMainMenu;
     [SerializeField] private GameObject aboutMenu;
     private bool inAboutMenu;
@@ -31,6 +32,8 @@ public class ButtonManager : MonoBehaviour
 
     public AudioSource[] sources;
 
+    private GameObject nextMenu;
+
     private void Awake()
     {
         SceneCheck();
@@ -45,6 +48,7 @@ public class ButtonManager : MonoBehaviour
         {
             player = GameObject.FindGameObjectWithTag("Player");
             Player = player.GetComponent<PlayerController>();
+            background.SetActive(false);
         }
         HUDPreset();
         sources = Object.FindObjectsOfType(typeof(AudioSource)) as AudioSource[];
@@ -118,6 +122,7 @@ public class ButtonManager : MonoBehaviour
                     pauseMenu.SetActive(true);
                     inPauseMenu = true;
                     MiddleText.text = "Game Is Paused";
+                    nextMenu = pauseMenu;
                 }
 
                 if (Time.timeScale == 1)
@@ -169,7 +174,7 @@ public class ButtonManager : MonoBehaviour
         aboutMenu.SetActive(true);
         inAboutMenu = true;
         MiddleText.text = "Options";
-
+        nextMenu = aboutMenu;
     }
 
     public void Controls()
@@ -179,7 +184,7 @@ public class ButtonManager : MonoBehaviour
         pauseMenu.SetActive(false);
         aboutMenu.SetActive(false);
         CheckActivity();
-        MiddleText.text = "Controls\nW,A,S, and D to move\nE to activate temporary shield";
+        MiddleText.text = "Controls\nW,A,S, and D or the left stick on Xbox to move\nE or A on Xbox to activate temporary shield\nHold LeftShift or X button on Xbox to crouch";
     }
 
     public void Credit()
@@ -192,177 +197,42 @@ public class ButtonManager : MonoBehaviour
         MiddleText.text = "Credit\n Artists\n Emily Bailey\n Cameron Welsh\n Coders\n David Metellus\n Junior Rojas Vasquez\n Techs\n Cameron Anderson\n Pablo Sarria\n";
     }
 
+    public void DeactivateAllMenus()
+    {
+        aboutMenu.SetActive(false);
+        inAboutMenu = false;
+        controlMenu.SetActive(false);
+        inControlMenu = false;
+        creditMenu.SetActive(false);
+        inCreditMenu = false;
+        pauseMenu.SetActive(false);
+    }
+
     public void Back()
     {
-        if (inMainMenu == true && inCreditMenu == true)
+        if (inMainMenu == true)
         {
-            creditMenu.SetActive(false);
-            inCreditMenu = false;
-            aboutMenu.SetActive(true);
-            MiddleText.text = "Options";
-            return;
-        }
-        else if (inMainMenu == false && inCreditMenu == true)
-        {
-            creditMenu.SetActive(false);
-            inCreditMenu = false;
-            aboutMenu.SetActive(true);
-            MiddleText.text = "Options";
+            HUDPreset();
             return;
         }
 
-        if (inMainMenu == true && inControlMenu == true)
+        if (inMainMenu == false && nextMenu == aboutMenu)
         {
-            controlMenu.SetActive(false);
-            inControlMenu = false;
+            DeactivateAllMenus();
             aboutMenu.SetActive(true);
+            inAboutMenu = true;
             MiddleText.text = "Options";
-            return;
-        }
-        else if (inMainMenu == false && inControlMenu == true)
-        {
-            controlMenu.SetActive(false);
-            inControlMenu = false;
-            aboutMenu.SetActive(true);
-            MiddleText.text = "Options";
+            nextMenu = pauseMenu;
             return;
         }
 
-        if (inMainMenu == true && inAboutMenu == true)
+        if (inMainMenu == false && nextMenu == pauseMenu)
         {
-            aboutMenu.SetActive(false);
-            inAboutMenu = false;
-            mainMenu.SetActive(true);
-            MiddleText.text = "";
-            return;
-        }
-        else if (inMainMenu == false && inAboutMenu == true)
-        {
-            aboutMenu.SetActive(false);
-            inAboutMenu = false;
+            DeactivateAllMenus();
             pauseMenu.SetActive(true);
-            MiddleText.text = "Game Paused";
-            return;
-        }
-
-        if (inMainMenu == true && inCreditMenu == true)
-        {
-            creditMenu.SetActive(false);
-            inCreditMenu = false;
-            aboutMenu.SetActive(true);
-            MiddleText.text = "Options";
-            return;
-        }
-        else if (inMainMenu == false && inCreditMenu == true)
-        {
-            creditMenu.SetActive(false);
-            inCreditMenu = false;
-            aboutMenu.SetActive(true);
-            MiddleText.text = "Options";
-            return;
-        }
-
-        if (inMainMenu == true && inControlMenu == true)
-        {
-            controlMenu.SetActive(false);
-            inControlMenu = false;
-            aboutMenu.SetActive(true);
-            MiddleText.text = "Options";
-            return;
-        }
-        else if (inMainMenu == false && inControlMenu == true)
-        {
-            controlMenu.SetActive(false);
-            inControlMenu = false;
-            aboutMenu.SetActive(true);
-            MiddleText.text = "Options";
-            return;
-        }
-
-
-
-        if (inPauseMenu == true && inCreditMenu == true)
-        {
-            creditMenu.SetActive(false);
-            inCreditMenu = false;
-            aboutMenu.SetActive(true);
-            MiddleText.text = "Options";
-            return;
-        }
-        else if (inPauseMenu == false && inCreditMenu == true)
-        {
-            creditMenu.SetActive(false);
-            inCreditMenu = false;
-            aboutMenu.SetActive(true);
-            MiddleText.text = "Options";
-            return;
-        }
-
-        if (inPauseMenu == true && inControlMenu == true)
-        {
-            controlMenu.SetActive(false);
-            inControlMenu = false;
-            aboutMenu.SetActive(true);
-            MiddleText.text = "Options";
-            return;
-        }
-        else if (inPauseMenu == false && inControlMenu == true)
-        {
-            controlMenu.SetActive(false);
-            inControlMenu = false;
-            aboutMenu.SetActive(true);
-            MiddleText.text = "Options";
-            return;
-        }
-
-        if (inPauseMenu == true && inAboutMenu == true)
-        {
-            aboutMenu.SetActive(false);
-            inAboutMenu = false;
-            mainMenu.SetActive(true);
-            MiddleText.text = "";
-            return;
-        }
-        else if (inPauseMenu == false && inAboutMenu == true)
-        {
-            aboutMenu.SetActive(false);
-            inAboutMenu = false;
-            pauseMenu.SetActive(true);
-            MiddleText.text = "Game Paused";
-            return;
-        }
-
-        if (inPauseMenu == true && inCreditMenu == true)
-        {
-            creditMenu.SetActive(false);
-            inCreditMenu = false;
-            aboutMenu.SetActive(true);
-            MiddleText.text = "Options";
-            return;
-        }
-        else if (inPauseMenu == false && inCreditMenu == true)
-        {
-            creditMenu.SetActive(false);
-            inCreditMenu = false;
-            aboutMenu.SetActive(true);
-            MiddleText.text = "Options";
-            return;
-        }
-
-        if (inPauseMenu == true && inControlMenu == true)
-        {
-            controlMenu.SetActive(false);
-            inControlMenu = false;
-            aboutMenu.SetActive(true);
-            MiddleText.text = "Options";
-            return;
-        }
-        else if (inPauseMenu == false && inControlMenu == true)
-        {
-            controlMenu.SetActive(false);
-            inControlMenu = false;
-            aboutMenu.SetActive(true);
-            MiddleText.text = "Options";
+            inPauseMenu = true;
+            MiddleText.text = "Game Is Paused";
+            nextMenu = null;
             return;
         }
     }

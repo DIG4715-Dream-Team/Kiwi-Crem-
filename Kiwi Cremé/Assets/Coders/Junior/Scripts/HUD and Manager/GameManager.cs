@@ -11,6 +11,11 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI EnPearlInfo;
     [SerializeField] private TextMeshProUGUI ExPearlInfo;
     [SerializeField] private TextMeshProUGUI statusText;
+    [SerializeField] private GameObject healthGoop;
+    [SerializeField] private GameObject hudTimer;
+    [SerializeField] private GameObject EntryPearl;
+    [SerializeField] private GameObject ExitPearl;
+
     public TextMeshProUGUI StatusText { get; private set; }
 
     private GameObject player;
@@ -20,6 +25,9 @@ public class GameManager : MonoBehaviour
     private ButtonManager ButtonManager;
 
     private bool StartTimer = false;
+
+    private GameObject[] Angels;
+    private int startingAngels = 0;
 
     void Start()
     {
@@ -39,6 +47,11 @@ public class GameManager : MonoBehaviour
             Player.transform.forward = spawnPoint.transform.forward;
         }
         Time.timeScale = 1;
+        Angels = GameObject.FindGameObjectsWithTag("Angel");
+        if (ButtonManager.currentScene == "MainMenu" || ButtonManager.currentScene == "HUB")
+        {
+            HideHUDObjects();
+        }
     }
 
     void Update()
@@ -53,10 +66,23 @@ public class GameManager : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (ButtonManager.currentScene != "MainMenu")
+        if (ButtonManager.currentScene != "MainMenu" && ButtonManager.currentScene != "HUB")
         {
             Timers();
         }
+
+        if (ButtonManager.currentScene == "Heaven")
+        {
+            HeavenLogic();
+        }
+    }
+
+    private void HideHUDObjects()
+    {
+        healthGoop.SetActive(false);
+        hudTimer.SetActive(false);
+        EntryPearl.SetActive(false);
+        ExitPearl.SetActive(false);
     }
 
     private void SceneCheck()
@@ -92,6 +118,19 @@ public class GameManager : MonoBehaviour
     {
         EnPearlInfo.text = $"Entry Pearls:{Player.EnPearls}";
         ExPearlInfo.text = $"Exit Pearls:{Player.ExPearls}";
+    }
+
+    private void HeavenLogic()
+    {
+        foreach (GameObject Angel in Angels)
+        {
+            startingAngels = startingAngels++;
+        }
+
+        if (Angels == null)
+        {
+            Player.UpdatePearl("Heaven");
+        }
     }
 
     private void GameFinishedLogic()
