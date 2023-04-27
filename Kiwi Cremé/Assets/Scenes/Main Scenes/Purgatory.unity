@@ -2205,7 +2205,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f12981ea6ec08e244a9a648ba87cc335, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetPosition: {x: 8, y: -41, z: -12.7}
+  targetPosition: {x: 8, y: 80, z: -12.7}
   impulseMagnitude: 1300
   gravityDisableDuration: 5
 --- !u!65 &1393657796
