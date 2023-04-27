@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class PlayerCamController : MonoBehaviour
 {
@@ -15,6 +16,8 @@ public class PlayerCamController : MonoBehaviour
 
     private const float GAMEPAD_MAX_VALUE = 1;
 
+    [SerializeField] private Slider mouseSensitivitySlider;
+
 
     private void OnEnable()
     {
@@ -23,12 +26,16 @@ public class PlayerCamController : MonoBehaviour
 
         cameraMouseAction = new InputAction("CameraMouse", InputActionType.Value, "<Mouse>/delta");
         cameraMouseAction.Enable();
+
+        mouseSensitivitySlider.onValueChanged.AddListener(UpdateMouseSensitivity);
     }
 
     private void OnDisable()
     {
         cameraGamepadAction.Disable();
         cameraMouseAction.Disable();
+
+        mouseSensitivitySlider.onValueChanged.RemoveListener(UpdateMouseSensitivity);
     }
 
     void FixedUpdate()
@@ -59,5 +66,10 @@ public class PlayerCamController : MonoBehaviour
 
         // Rotate the parent player object around the y-axis
         transform.parent.Rotate(Vector3.up, mouseX);
+    }
+
+    public void UpdateMouseSensitivity(float value)
+    {
+        mouseSensitivity = value;
     }
 }
