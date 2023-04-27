@@ -23,6 +23,9 @@ public class ButtonManager : MonoBehaviour
     [SerializeField] private GameObject pauseMenu;
     private bool inPauseMenu;
     [SerializeField] private GameObject endMenu;
+    [SerializeField] private GameObject settingMenu;
+    private bool inSettingMenu;
+
     public GameObject EndMenu { get; private set; }
 
     private GameObject player;
@@ -71,6 +74,7 @@ public class ButtonManager : MonoBehaviour
             creditMenu.SetActive(false);
             pauseMenu.SetActive(false);
             endMenu.SetActive(false);
+            settingMenu.SetActive(false);
         }
         else
         {
@@ -80,6 +84,7 @@ public class ButtonManager : MonoBehaviour
             creditMenu.SetActive(false);
             pauseMenu.SetActive(false);
             endMenu.SetActive(false);
+            settingMenu.SetActive(false);
         }
     }
 
@@ -187,6 +192,16 @@ public class ButtonManager : MonoBehaviour
         MiddleText.text = "Controls\nW,A,S, and D or the left stick on Xbox to move\nE or A on Xbox to activate temporary shield\nHold LeftShift or X button on Xbox to crouch";
     }
 
+    public void Settings()
+    {
+        settingMenu.SetActive(true);
+        inSettingMenu = true;
+        pauseMenu.SetActive(false);
+        aboutMenu.SetActive(false);
+        CheckActivity();
+        MiddleText.text = "Volume Controller\n\n\nMouse Sensitivity";
+    }
+
     public void Credit()
     {
         creditMenu.SetActive(true);
@@ -206,6 +221,7 @@ public class ButtonManager : MonoBehaviour
         creditMenu.SetActive(false);
         inCreditMenu = false;
         pauseMenu.SetActive(false);
+        settingMenu.SetActive(false);
     }
 
     public void Back()
