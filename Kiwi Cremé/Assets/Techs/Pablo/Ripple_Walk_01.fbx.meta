@@ -39,8 +39,8 @@ ModelImporter:
       name: Ripple
       takeName: Ripple
       internalID: 0
-      firstFrame: 0
-      lastFrame: 10
+      firstFrame: 1
+      lastFrame: 9
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
