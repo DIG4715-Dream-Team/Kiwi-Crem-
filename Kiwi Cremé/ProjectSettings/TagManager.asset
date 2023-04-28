@@ -24,6 +24,7 @@ TagManager:
   - HeavenPortal
   - PurgatoryPortal
   - Angel
+  - Moon
   layers:
   - Default
   - TransparentFX
