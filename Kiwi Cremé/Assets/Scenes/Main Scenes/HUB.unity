@@ -472,17 +472,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3530426}
-  m_LocalRotation: {x: 0.0021327133, y: 0.7037643, z: -0.7103154, w: 0.012774092}
-  m_LocalPosition: {x: 0, y: 0, z: -0.58}
+  m_LocalRotation: {x: -0.00027023628, y: 0.70371723, z: -0.71031857, w: 0.015154801}
+  m_LocalPosition: {x: 0, y: 0, z: -0.59}
   m_LocalScale: {x: 0.2041567, y: 0.77753234, z: 1.1918699}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1394122247}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 88.987, y: -302.221, z: -121.013}
+  m_LocalEulerAnglesHint: {x: 88.641, y: -293.772, z: -112.566}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.23, y: 0.119}
+  m_AnchoredPosition: {x: -0.16, y: 0.116}
   m_SizeDelta: {x: 20, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &3924076
@@ -27425,7 +27425,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1134687010}
-  m_LocalRotation: {x: -0.2926723, y: -0.6652349, z: 0.63787997, w: -0.25478342}
+  m_LocalRotation: {x: -0.2715139, y: -0.6564866, z: 0.6471694, w: -0.27654567}
   m_LocalPosition: {x: 4.28, y: 0.19, z: 11.47}
   m_LocalScale: {x: 0.37174612, y: 1.0000002, z: 0.23015796}
   m_ConstrainProportionsScale: 0
@@ -27433,7 +27433,7 @@ Transform:
   - {fileID: 2038971158}
   m_Father: {fileID: 0}
   m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 93.78699, y: -328.616, z: -103.041016}
+  m_LocalEulerAnglesHint: {x: 90.856995, y: -411.173, z: -185.569}
 --- !u!1 &1135682179
 GameObject:
   m_ObjectHideFlags: 0
@@ -34962,15 +34962,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1394122243}
-  m_LocalRotation: {x: -0.7052888, y: 0.028997239, z: -0.059311006, w: -0.7058392}
-  m_LocalPosition: {x: -1.008, y: 0.788, z: -1.871}
+  m_LocalRotation: {x: -0.69881886, y: 0.09962648, z: -0.12984245, w: -0.6963245}
+  m_LocalPosition: {x: -1.0065986, y: 0.7880601, z: -1.8709027}
   m_LocalScale: {x: 0.3717461, y: 1.0000001, z: 0.23015802}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3530429}
   m_Father: {fileID: 0}
   m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 92.457, y: -94.621, z: 272.54102}
+  m_LocalEulerAnglesHint: {x: 92.457, y: -94.621, z: 284.059}
 --- !u!1 &1396088471 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2128735119116235049, guid: e6231efcb83a08a47a782c02fe3b18a9, type: 3}
@@ -50632,7 +50632,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2008235557}
-  m_LocalRotation: {x: -0.6469535, y: 0.18415727, z: -0.22933242, w: -0.7035225}
+  m_LocalRotation: {x: -0.65158796, y: 0.19876467, z: -0.21581315, w: -0.6995359}
   m_LocalPosition: {x: 8.24, y: 0.28, z: -11.01}
   m_LocalScale: {x: 0.3717461, y: 1.0000001, z: 0.23015802}
   m_ConstrainProportionsScale: 0
@@ -50640,7 +50640,7 @@ Transform:
   - {fileID: 1480902666}
   m_Father: {fileID: 0}
   m_RootOrder: 11
-  m_LocalEulerAnglesHint: {x: 95.86798, y: -158.413, z: 235.634}
+  m_LocalEulerAnglesHint: {x: 94.12399, y: -177.485, z: 216.632}
 --- !u!1001 &2010061092
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -52602,8 +52602,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Return to me so. All eyes will be on you, use my divine shield by pressing
-    E to deflect their fiery gaze.
+  m_text: Once you have escaped the other realms, return to me son. All eyes will
+    be on you, use my divine shield by pressing E to deflect their fiery gaze.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: baee1a0f527386d4a909abdcb0fc175d, type: 2}
   m_sharedMaterial: {fileID: 2376906688713212932, guid: baee1a0f527386d4a909abdcb0fc175d, type: 2}
@@ -52725,7 +52725,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2076639774}
   m_LocalRotation: {x: 0.0047844034, y: -0.70595187, z: 0.7082383, w: 0.00277177}
-  m_LocalPosition: {x: 0, y: 0, z: 0.13}
+  m_LocalPosition: {x: 0, y: 0, z: -1.49}
   m_LocalScale: {x: 0.22241767, y: 0.7941449, z: 1.5395318}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -52734,7 +52734,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 89.755, y: 41.662, z: -138.95}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.016, y: 0.074}
+  m_AnchoredPosition: {x: -0.36, y: 0.073}
   m_SizeDelta: {x: 20, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &2076958160
