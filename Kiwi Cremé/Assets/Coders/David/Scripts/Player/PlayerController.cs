@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour
     public float normalSpeed = 5f;
     public float boostSpeed = 15f;
 
+    public bool isCrouching;
+
     private bool boosted = false;
 
     Rigidbody rb;
@@ -30,6 +32,7 @@ public class PlayerController : MonoBehaviour
 
     private InputAction crouchAction;
 
+    public bool isInvincible = false;
 
     void Start()
     {
@@ -63,15 +66,13 @@ public class PlayerController : MonoBehaviour
 
     private void Crouching()
     {
-        bool isCrouching = Input.GetKey(KeyCode.LeftShift) || Gamepad.current?.buttonWest.isPressed == true;
+        isCrouching = Input.GetKey(KeyCode.LeftShift) || Gamepad.current?.buttonWest.isPressed == true;
         if (isCrouching)
         {
-            transform.gameObject.tag = "HiddenPlayer";
             speed = crouchSpeed;
         }
         else
         {
-            transform.gameObject.tag = "Player";
             speed = normalSpeed;
         }
     }
@@ -112,6 +113,11 @@ public class PlayerController : MonoBehaviour
         {
             Died = true;
         }
+    }
+
+    public void SetInvincibility(bool isInvincible)
+    {
+        this.isInvincible = isInvincible;
     }
 
     public void UpdatePearl(string level)
