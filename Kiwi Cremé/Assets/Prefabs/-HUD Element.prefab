@@ -1082,7 +1082,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5134377090897064227}
   - component: {fileID: 719772628141045521}
-  - component: {fileID: 6519305887752752273}
+  - component: {fileID: 4001423091169243436}
   m_Layer: 5
   m_Name: Invincible
   m_TagString: Untagged
@@ -1171,7 +1171,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   m_IsOn: 1
---- !u!114 &6519305887752752273
+--- !u!114 &4001423091169243436
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

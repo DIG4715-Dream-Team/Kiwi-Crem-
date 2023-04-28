@@ -19682,9 +19682,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 719772628141045521, guid: e4d2f35dbe2e2c3409bfa9a9c9dfac00, type: 3}
+      propertyPath: m_IsOn
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 719772628141045521, guid: e4d2f35dbe2e2c3409bfa9a9c9dfac00, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 11500000, guid: f3b4c01e880c4754e901d09bab07abbf, type: 3}
+    - target: {fileID: 4001423091169243436, guid: e4d2f35dbe2e2c3409bfa9a9c9dfac00, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1761602772}
     - target: {fileID: 5165532761149637485, guid: e4d2f35dbe2e2c3409bfa9a9c9dfac00, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -19749,10 +19757,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6519305887752752273, guid: e4d2f35dbe2e2c3409bfa9a9c9dfac00, type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 1761602772}
     - target: {fileID: 6604475751132025123, guid: e4d2f35dbe2e2c3409bfa9a9c9dfac00, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
