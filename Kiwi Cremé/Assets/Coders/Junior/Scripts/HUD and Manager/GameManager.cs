@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -26,8 +27,6 @@ public class GameManager : MonoBehaviour
 
     private bool StartTimer = false;
 
-    private GameObject[] Angels;
-    private int startingAngels = 0;
 
     void Start()
     {
@@ -47,7 +46,6 @@ public class GameManager : MonoBehaviour
             Player.transform.forward = spawnPoint.transform.forward;
         }
         Time.timeScale = 1;
-        Angels = GameObject.FindGameObjectsWithTag("Angel");
         if (ButtonManager.currentScene == "MainMenu" || ButtonManager.currentScene == "HUB")
         {
             HideHUDObjects();
@@ -69,11 +67,6 @@ public class GameManager : MonoBehaviour
         if (ButtonManager.currentScene != "MainMenu" && ButtonManager.currentScene != "HUB")
         {
             Timers();
-        }
-
-        if (ButtonManager.currentScene == "Heaven")
-        {
-            HeavenLogic();
         }
     }
 
@@ -120,19 +113,6 @@ public class GameManager : MonoBehaviour
         ExPearlInfo.text = $"Exit Pearls:{Player.ExPearls}";
     }
 
-    private void HeavenLogic()
-    {
-        foreach (GameObject Angel in Angels)
-        {
-            startingAngels = startingAngels++;
-        }
-
-        if (Angels == null)
-        {
-            Player.UpdatePearl("Heaven");
-        }
-    }
-
     private void GameFinishedLogic()
     {
         if (Player.Died == true)
@@ -171,5 +151,9 @@ public class GameManager : MonoBehaviour
             StatusText.text = "You do not have an exit pearl";
             StartTimer = true;
         }
+    }
+    public void ToggleInvincibility()
+    {
+        Player.isInvincible = !Player.isInvincible;
     }
 }
