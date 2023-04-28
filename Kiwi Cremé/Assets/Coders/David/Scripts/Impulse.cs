@@ -6,38 +6,27 @@ public class Impulse : MonoBehaviour
 {
     public Vector3 targetPosition; // the position where the player will be impulse
     public float impulseMagnitude; // the magnitude of the impulse force
-    public float gravityDisableDuration; // the duration for which the player's gravity will be disabled
+    public float gravityDisableDuration; // the duration for which the player's gravity will be disabled}
 
-    // Start is called before the first frame update
-    void Start()
+    private GameObject player;
+    private PlayerController Player;
+
+    private GameObject moon;
+    private PlayerController Moon;
+
+    private void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
+        Player = player.GetComponent<PlayerController>();
 
+        moon = GameObject.FindGameObjectWithTag("Moon");
+        Moon = player.GetComponent<PlayerController>();
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other != null && other.CompareTag("Player"))
         {
-            Rigidbody playerRb = other.GetComponent<Rigidbody>();
-            if (playerRb != null)
-            {
-                Vector3 impulseDirection = (targetPosition - playerRb.position).normalized;
-                playerRb.AddForce(impulseDirection * impulseMagnitude, ForceMode.VelocityChange);
-                StartCoroutine(DisableGravity(playerRb));
-            }
+            player.GetComponent<Rigidbody>().AddForce(Moon.transform.localPosition, ForceMode.Impulse);
         }
-    }
-
-    IEnumerator DisableGravity(Rigidbody rb)
-    {
-        rb.useGravity = false;
-        yield return new WaitForSeconds(gravityDisableDuration);
-        rb.useGravity = true;
     }
 }
