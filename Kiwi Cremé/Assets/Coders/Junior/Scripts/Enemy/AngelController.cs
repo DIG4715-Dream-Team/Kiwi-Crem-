@@ -28,7 +28,7 @@ public class AngelController : MonoBehaviour
         {
             transform.LookAt(player.transform.position);
             agent.SetDestination(player.transform.position);
-            if (Player.CompareTag("HiddenPlayer"))
+            if (Player.isCrouching == true)
             {
                 trackingPlayer = false;
             }

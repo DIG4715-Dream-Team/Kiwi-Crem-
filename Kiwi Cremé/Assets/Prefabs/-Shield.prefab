@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1541268671628476273}
   m_Layer: 0
   m_Name: -Shield
-  m_TagString: Untagged
+  m_TagString: Shield
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c00a75c97468a2244a2a9363af4ffd10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  despawnTime: 5.1
+  despawnTime: 5
 --- !u!114 &-3976740969576064801
 MonoBehaviour:
   m_ObjectHideFlags: 0

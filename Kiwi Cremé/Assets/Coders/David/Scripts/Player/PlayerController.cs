@@ -1,14 +1,15 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
-
-
+using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
     public float speed;
     public float crouchSpeed = 2f;
     public float normalSpeed = 5f;
     public float boostSpeed = 15f;
+
+    public bool isCrouching;
 
     private bool boosted = false;
 
@@ -24,6 +25,8 @@ public class PlayerController : MonoBehaviour
     public int ExPearls { get; private set; }
 
     private InputAction crouchAction;
+
+    public bool isInvincible = false;
 
 
     void Start()
@@ -58,15 +61,13 @@ public class PlayerController : MonoBehaviour
 
     private void Crouching()
     {
-        bool isCrouching = Input.GetKey(KeyCode.LeftShift) || Gamepad.current?.buttonWest.isPressed == true;
+        isCrouching = Input.GetKey(KeyCode.LeftShift) || Gamepad.current?.buttonWest.isPressed == true;
         if (isCrouching)
         {
-            transform.gameObject.tag = "HiddenPlayer";
             speed = crouchSpeed;
         }
         else
         {
-            transform.gameObject.tag = "Player";
             speed = normalSpeed;
         }
     }
@@ -101,12 +102,20 @@ public class PlayerController : MonoBehaviour
 
     public void HealthManagement(int amount)
     {
-        Health = Health + amount;
-
-        if (Health <= 0)
+        if (!isInvincible)
         {
-            Died = true;
+            Health += amount;
+            if (Health <= 0)
+            {
+                Died = true;
+                GameOver = true;
+            }
         }
+    }
+
+    public void SetInvincibility(bool isInvincible)
+    {
+        this.isInvincible = isInvincible;
     }
 
     public void UpdatePearl(string level)
