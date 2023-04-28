@@ -26,7 +26,8 @@ public class Impulse : MonoBehaviour
     {
         if (other != null && other.CompareTag("Player"))
         {
-            player.GetComponent<Rigidbody>().AddForce(Moon.transform.localPosition, ForceMode.Impulse);
+            Player.transform.rotation = Quaternion.Euler(0f, -180f, 0f);
+            player.GetComponent<Rigidbody>().AddForce(new Vector3(0f, 100f, 100f) , ForceMode.Acceleration);
         }
     }
 }
