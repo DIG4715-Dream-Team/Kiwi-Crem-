@@ -662,7 +662,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5165532762548458718, guid: e4d2f35dbe2e2c3409bfa9a9c9dfac00, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5165532762548458718, guid: e4d2f35dbe2e2c3409bfa9a9c9dfac00, type: 3}
       propertyPath: m_TagString
@@ -16404,6 +16404,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4338823137886273922, guid: b65681fa37a29ab4e9f63c33006a4fa0, type: 3}
+      propertyPath: mouseSensitivitySlider
+      value: 
+      objectReference: {fileID: 1735094810}
     - target: {fileID: 4338823137891619472, guid: b65681fa37a29ab4e9f63c33006a4fa0, type: 3}
       propertyPath: m_Name
       value: -PlayerLegacy
@@ -44291,6 +44295,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4047587341391773353, guid: 13c7c94aae847d241af032a433fa418a, type: 3}
   m_PrefabInstance: {fileID: 1734801401}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1735094810 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8902996645687527042, guid: e4d2f35dbe2e2c3409bfa9a9c9dfac00, type: 3}
+  m_PrefabInstance: {fileID: 8044493}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1735334309
 PrefabInstance:
   m_ObjectHideFlags: 0
