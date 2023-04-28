@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -171,5 +172,9 @@ public class GameManager : MonoBehaviour
             StatusText.text = "You do not have an exit pearl";
             StartTimer = true;
         }
+    }
+    public void ToggleInvincibility()
+    {
+        Player.isInvincible = !Player.isInvincible;
     }
 }

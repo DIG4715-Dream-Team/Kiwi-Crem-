@@ -1,8 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
-
-
+using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
     public float speed;
@@ -24,6 +23,8 @@ public class PlayerController : MonoBehaviour
     public int ExPearls { get; private set; }
 
     private InputAction crouchAction;
+
+    public bool isInvincible = false;
 
 
     void Start()
@@ -101,12 +102,20 @@ public class PlayerController : MonoBehaviour
 
     public void HealthManagement(int amount)
     {
-        Health = Health + amount;
-
-        if (Health <= 0)
+        if (!isInvincible)
         {
-            Died = true;
+            Health += amount;
+            if (Health <= 0)
+            {
+                Died = true;
+                GameOver = true;
+            }
         }
+    }
+
+    public void SetInvincibility(bool isInvincible)
+    {
+        this.isInvincible = isInvincible;
     }
 
     public void UpdatePearl(string level)

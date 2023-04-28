@@ -8346,6 +8346,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4338823136387358920, guid: b65681fa37a29ab4e9f63c33006a4fa0, type: 3}
+      propertyPath: isInvincible
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4338823137886273922, guid: b65681fa37a29ab4e9f63c33006a4fa0, type: 3}
       propertyPath: mouseSensitivitySlider
       value: 
@@ -19677,6 +19681,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 719772628141045521, guid: e4d2f35dbe2e2c3409bfa9a9c9dfac00, type: 3}
+      propertyPath: m_IsOn
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 719772628141045521, guid: e4d2f35dbe2e2c3409bfa9a9c9dfac00, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 11500000, guid: f3b4c01e880c4754e901d09bab07abbf, type: 3}
+    - target: {fileID: 4001423091169243436, guid: e4d2f35dbe2e2c3409bfa9a9c9dfac00, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1761602772}
     - target: {fileID: 5165532761149637485, guid: e4d2f35dbe2e2c3409bfa9a9c9dfac00, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -33912,6 +33928,17 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!114 &1761602772 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4338823136387358920, guid: b65681fa37a29ab4e9f63c33006a4fa0, type: 3}
+  m_PrefabInstance: {fileID: 457843344}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d29101594f8dd54eb6d21107e294b7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1766068994
 PrefabInstance:
   m_ObjectHideFlags: 0
