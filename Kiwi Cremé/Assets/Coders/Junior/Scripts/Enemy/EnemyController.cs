@@ -22,7 +22,7 @@ public class EnemyController : MonoBehaviour
         if (trackingPlayer == true)
         {
             agent.SetDestination(player.transform.position);
-            if (Player.CompareTag("HiddenPlayer"))
+            if (Player.isCrouching == true)
             {
                 trackingPlayer = false;
             }
