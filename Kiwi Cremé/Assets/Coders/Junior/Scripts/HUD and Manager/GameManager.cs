@@ -27,8 +27,6 @@ public class GameManager : MonoBehaviour
 
     private bool StartTimer = false;
 
-    private GameObject[] Angels;
-    private int startingAngels = 0;
 
     void Start()
     {
@@ -48,7 +46,6 @@ public class GameManager : MonoBehaviour
             Player.transform.forward = spawnPoint.transform.forward;
         }
         Time.timeScale = 1;
-        Angels = GameObject.FindGameObjectsWithTag("Angel");
         if (ButtonManager.currentScene == "MainMenu" || ButtonManager.currentScene == "HUB")
         {
             HideHUDObjects();
@@ -70,11 +67,6 @@ public class GameManager : MonoBehaviour
         if (ButtonManager.currentScene != "MainMenu" && ButtonManager.currentScene != "HUB")
         {
             Timers();
-        }
-
-        if (ButtonManager.currentScene == "Heaven")
-        {
-            HeavenLogic();
         }
     }
 
@@ -119,19 +111,6 @@ public class GameManager : MonoBehaviour
     {
         EnPearlInfo.text = $"Entry Pearls:{Player.EnPearls}";
         ExPearlInfo.text = $"Exit Pearls:{Player.ExPearls}";
-    }
-
-    private void HeavenLogic()
-    {
-        foreach (GameObject Angel in Angels)
-        {
-            startingAngels = startingAngels++;
-        }
-
-        if (Angels == null)
-        {
-            Player.UpdatePearl("Heaven");
-        }
     }
 
     private void GameFinishedLogic()
