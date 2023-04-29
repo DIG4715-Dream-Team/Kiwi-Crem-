@@ -74,6 +74,7 @@ public class PlayerController : MonoBehaviour
         else
         {
             speed = normalSpeed;
+            isCrouching = false;
         }
     }
 
