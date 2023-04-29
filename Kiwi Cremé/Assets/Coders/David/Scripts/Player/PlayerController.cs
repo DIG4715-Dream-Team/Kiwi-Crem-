@@ -103,16 +103,19 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("BoostObject"))
         {
             boosted = false;
-        }
+        } 
     }
 
     public void HealthManagement(int amount)
     {
-        Health = Health + amount;
-
-        if (Health <= 0)
+        if (!isInvincible)
         {
-            Died = true;
+            Health = Health + amount;
+
+            if (Health <= 0)
+            {
+                Died = true;
+            }
         }
     }
 
