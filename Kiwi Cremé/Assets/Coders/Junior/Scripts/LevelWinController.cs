@@ -6,20 +6,22 @@ public class LevelWinController : MonoBehaviour
     {
         if (other != null && other.gameObject.CompareTag("Player"))
         {
-            if (other.gameObject.GetComponent<PlayerController>().hasHellPearl == true)
+            if (GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>().hasHellPearl == true)
             {
-                other.gameObject.GetComponent<PlayerController>().UpdateObjective("Hell");
+                GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>().UpdateObjective("Hell");
             }
 
-            if (other.gameObject.GetComponent<PlayerController>().hasHeavenPearl == true)
+            if (GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>().hasHeavenPearl == true)
             {
-                other.gameObject.GetComponent<PlayerController>().UpdateObjective("Heaven");
+                GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>().UpdateObjective("Heaven");
             }
 
-            if (other.gameObject.GetComponent<PlayerController>().hasPurgatoryPearl == true)
+            if (GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>().hasPurgatoryPearl == true)
             {
-                other.gameObject.GetComponent<PlayerController>().UpdateObjective("Purgatory");
+                GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>().UpdateObjective("Purgatory");
             }
+
+            
         }
     }
 }
