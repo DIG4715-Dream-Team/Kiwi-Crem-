@@ -23,7 +23,7 @@ public class Deflected : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Player.HealthManagement(-5);
+            Player.HealthManagement(-1);
         }
         if (collision.gameObject.CompareTag("Turret"))
         {

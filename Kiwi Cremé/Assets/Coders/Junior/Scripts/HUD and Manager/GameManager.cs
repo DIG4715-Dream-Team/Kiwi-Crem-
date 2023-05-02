@@ -25,8 +25,21 @@ public class GameManager : MonoBehaviour
     private GameObject buttonManager;
     private ButtonManager ButtonManager;
 
+    public bool HellObjective { get; private set; }
+    public bool PurgatoryObjective { get; private set; }
+    public bool HeavenObjective { get; private set; }
+    public bool CompletedObjectives { get; private set; }
+
+    public bool hasHellPearl { get; private set; }
+    public bool hasHeavenPearl { get; private set; }
+    public bool hasPurgatoryPearl { get; private set; }
+
     private bool StartTimer = false;
 
+    private void Awake()
+    {
+        DontDestroyOnLoad(gameObject);
+    }
 
     void Start()
     {
@@ -70,6 +83,49 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void UpdatePearl(string level)
+    {
+        if (level == "Hell")
+        {
+            hasHellPearl = true;
+        }
+
+        if (level == "Heaven")
+        {
+            hasHeavenPearl = true;
+        }
+
+        if (level == "Purgatory")
+        {
+            hasPurgatoryPearl = true;
+        }
+    }
+
+    public void UpdateObjective(string level)
+    {
+        if (level == "Hell")
+        {
+            HellObjective = true;
+            SceneManager.LoadScene("HUB");
+        }
+
+        if (level == "Heaven")
+        {
+            HeavenObjective = true;
+            SceneManager.LoadScene("HUB");
+        }
+
+        if (level == "Purgatory")
+        {
+            PurgatoryObjective = true;
+            SceneManager.LoadScene("HUB");
+        }
+        if (HellObjective == true && HeavenObjective == true && PurgatoryObjective == true)
+        {
+            CompletedObjectives = true;
+        }
+    }
+
     private void HideHUDObjects()
     {
         healthGoop.SetActive(false);
@@ -103,7 +159,7 @@ public class GameManager : MonoBehaviour
 
     private void UpdateHUDElements()
     {
-        Health.text = $"Current Health:{Player.Health}";
+        Health.text = $"Lives:{Player.Health}";
         Timer.text = $"Time Left:{timeLeft.ToString("F1")}";
     }
 
@@ -122,7 +178,7 @@ public class GameManager : MonoBehaviour
             ButtonManager.MiddleText.text = "You have died!";
             Cursor.lockState = CursorLockMode.None;
         }
-        else if (Player.CompletedObjectives == true)
+        else if (GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>().CompletedObjectives == true)
         {
             Time.timeScale = 0;
             ButtonManager.EndMenu.SetActive(true);

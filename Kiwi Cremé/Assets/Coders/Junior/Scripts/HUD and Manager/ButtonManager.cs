@@ -199,7 +199,7 @@ public class ButtonManager : MonoBehaviour
         pauseMenu.SetActive(false);
         aboutMenu.SetActive(false);
         CheckActivity();
-        MiddleText.text = "Volume Controller\n\n\nMouse Sensitivity";
+        MiddleText.text = "Settings";
     }
 
     public void Credit()

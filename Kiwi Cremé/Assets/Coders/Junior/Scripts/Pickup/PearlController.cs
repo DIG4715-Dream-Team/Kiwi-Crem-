@@ -20,7 +20,7 @@ public class PearlController : MonoBehaviour
     {
         if (other != null && other.gameObject.CompareTag("Player"))
         {
-            Player.UpdatePearl($"{scene}");
+            GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>().UpdatePearl($"{scene}");
             Destroy(gameObject);
         }
     }

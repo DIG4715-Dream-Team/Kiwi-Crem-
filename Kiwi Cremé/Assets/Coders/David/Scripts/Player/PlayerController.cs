@@ -17,16 +17,16 @@ public class PlayerController : MonoBehaviour
     Rigidbody rb;
 
     public bool Died { get; private set; }
-    public bool HellObjective { get; private set; }
-    public bool PurgatoryObjective { get; private set; }
-    public bool HeavenObjective { get; private set; }
-    public bool CompletedObjectives { get; private set; }
+    //public bool HellObjective { get; private set; }
+    //public bool PurgatoryObjective { get; private set; }
+    //public bool HeavenObjective { get; private set; }
+    //public bool CompletedObjectives { get; private set; }
     public int Health { get; private set; }
     public bool GameOver { get; private set; }
 
-    public bool hasHellPearl { get; private set; }
-    public bool hasHeavenPearl { get; private set; }
-    public bool hasPurgatoryPearl { get; private set; }
+    //public bool hasHellPearl { get; private set; }
+    //public bool hasHeavenPearl { get; private set; }
+    //public bool hasPurgatoryPearl { get; private set; }
     public int EnPearls { get; private set; }
     public int ExPearls { get; private set; }
 
@@ -37,7 +37,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        Health = 5;
+        Health = 3;
         crouchAction = new InputAction("Crouch", InputActionType.Button, "<Keyboard>/leftShift");
         crouchAction.Enable();
     }
@@ -124,49 +124,48 @@ public class PlayerController : MonoBehaviour
         this.isInvincible = isInvincible;
     }
 
-    public void UpdatePearl(string level)
-    {
-        if (level == "Hell")
-        {
-            hasHellPearl = true;
-        }
+    //public void UpdatePearl(string level)
+    //{
+    //    if (level == "Hell")
+    //    {
+    //        hasHellPearl = true;
+    //    }
 
-        if (level == "Heaven")
-        {
-            hasHeavenPearl = true;
-        }
+    //    if (level == "Heaven")
+    //    {
+    //        hasHeavenPearl = true;
+    //    }
 
-        if (level == "Purgatory")
-        {
-            hasPurgatoryPearl = true;
-        }
-    }
+    //    if (level == "Purgatory")
+    //    {
+    //        hasPurgatoryPearl = true;
+    //    }
+    //}
 
-    public void UpdateObjective(string level)
-    {
-        if (level == "Hell")
-        {
-            HellObjective = true;
-            SceneManager.LoadScene("HUB");
-        }
+    //public void UpdateObjective(string level)
+    //{
+    //    if (level == "Hell")
+    //    {
+    //        HellObjective = true;
+    //        SceneManager.LoadScene("HUB");
+    //    }
 
-        if (level == "Heaven")
-        {
-            HeavenObjective = true;
-            SceneManager.LoadScene("HUB");
-        }
+    //    if (level == "Heaven")
+    //    {
+    //        HeavenObjective = true;
+    //        SceneManager.LoadScene("HUB");
+    //    }
 
-        if (level == "Purgatory")
-        {
-            PurgatoryObjective = true;
-            SceneManager.LoadScene("HUB");
-        }
-
-        if (HellObjective == true && HeavenObjective == true && PurgatoryObjective == true)
-        {
-            CompletedObjectives = true;
-        }
-    }
+    //    if (level == "Purgatory")
+    //    {
+    //        PurgatoryObjective = true;
+    //        SceneManager.LoadScene("HUB");
+    //    }
+    //    if (HellObjective == true && HeavenObjective == true && PurgatoryObjective == true)
+    //    {
+    //        CompletedObjectives = true;
+    //    }
+    //}
 
     public void UpdatePearlAmount(string type, int change)
     {

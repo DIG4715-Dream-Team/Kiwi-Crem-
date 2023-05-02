@@ -82,7 +82,7 @@ public class EnemyController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            Player.HealthManagement(-5);
+            Player.HealthManagement(-1);
             trackingPlayer = false;
             agent.SetDestination(centerPoint.transform.position);
         }
